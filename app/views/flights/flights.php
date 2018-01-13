@@ -1,5 +1,5 @@
-<? require APP_ROOT . '/views/includes/header.php'; ?>
-<link rel="stylesheet" type="text/css" href="<? echo PUBLIC_ROOT; ?>/css/views/flights/style.css">  
+<?php require APP_ROOT . '/views/includes/header.php'; ?>
+<link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_ROOT; ?>/css/views/flights/style.css">  
 <div class="wrapper wrapper-custom">
   <header class="header">
     <h1 class="title">Compare cheap flights</h1>
@@ -79,7 +79,7 @@
   <div class="flights-list">
 
     <article class="flight-wrapper"> <!-- This element will be dynamically duplicated  -->
-      <img class="flight__logo" src="<? echo PUBLIC_ROOT; ?>/img/icons/rocket.png">
+      <img class="flight__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/rocket.png">
       
       <p class="flight__label flight__label--from" > From: </p>
       <p class="flight__label flight__label--to" > To: </p>
@@ -95,7 +95,7 @@
       <button class="flight__book"> Book </button>
     </article>
     <article class="flight-wrapper"> <!-- This element will be dynamically duplicated  -->
-      <img class="flight__logo" src="<? echo PUBLIC_ROOT; ?>/img/icons/rocket.png">
+      <img class="flight__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/rocket.png">
       
       <p class="flight__label flight__label--from" > From: </p>
       <p class="flight__label flight__label--to" > To: </p>
@@ -111,7 +111,7 @@
       <button class="flight__book"> Book </button>
     </article>
     <article class="flight-wrapper"> <!-- This element will be dynamically duplicated  -->
-      <img class="flight__logo" src="<? echo PUBLIC_ROOT; ?>/img/icons/rocket.png">
+      <img class="flight__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/rocket.png">
       
       <p class="flight__label flight__label--from" > From: </p>
       <p class="flight__label flight__label--to" > To: </p>
@@ -130,4 +130,4 @@
 </div>
 
 </div>
-<? require APP_ROOT . '/views/includes/footer.php'; ?>
+<?php require APP_ROOT . '/views/includes/footer.php'; ?>

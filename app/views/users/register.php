@@ -1,11 +1,11 @@
-<? require APP_ROOT . '/views/includes/header.php'; ?>
-<link rel="stylesheet" type="text/css" href="<? echo PUBLIC_ROOT; ?>/css/views/register/style.css">  
+<?php require APP_ROOT . '/views/includes/header.php'; ?>
+<link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_ROOT; ?>/css/views/register/style.css">  
 
-<img class="cloud cloud-1" src="<? echo PUBLIC_ROOT; ?>/img/icons/clouds.png">     
-<img class="cloud cloud-2" src="<? echo PUBLIC_ROOT; ?>/img/icons/clouds.png">
+<img class="cloud cloud-1" src="<?php echo PUBLIC_ROOT; ?>/img/icons/clouds.png">     
+<img class="cloud cloud-2" src="<?php echo PUBLIC_ROOT; ?>/img/icons/clouds.png">
 
 <div class="form-wrapper">
-  <form class="form" action="<? echo PUBLIC_ROOT . '/users/register' ?>" method="POST">
+  <form class="form" action="<?php echo PUBLIC_ROOT . '/users/register' ?>" method="POST">
     <div class="form__top">
       <h1 class="heading"> Register </h1>
       <p class="help"> Please fill out this form to register with us </p>
@@ -36,8 +36,8 @@
     </div>
   </form>
 
-  <a class="register" href="<? echo PUBLIC_ROOT . '/users/login' ?>"> Already have an account? Login</a>
+  <a class="register" href="<?php echo PUBLIC_ROOT . '/users/login' ?>"> Already have an account? Login</a>
 </div>
 
 
-<? require APP_ROOT . '/views/includes/footer.php'; ?>
+<?php require APP_ROOT . '/views/includes/footer.php'; ?>

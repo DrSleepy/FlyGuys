@@ -1,4 +1,4 @@
-<?
+<?php
 class Flights extends Controller
 {
   private $Flight;

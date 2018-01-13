@@ -1,4 +1,4 @@
-<?
+<?php
 // Base controller
 // Loads models and views
 

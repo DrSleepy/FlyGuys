@@ -1,4 +1,4 @@
-<?
+<?php
 // File responsibilities:
 // Handles all HTTP Methods (GET, POST, PUT etc) for 'register' function in controllers/Users/Users.php
 

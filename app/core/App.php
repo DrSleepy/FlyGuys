@@ -1,4 +1,4 @@
-<?
+<?php
 // Creates URL & Loads appropriate controller
 // URL FORMAT - /controller/method/params
 
