@@ -1,0 +1,5 @@
+1. Users will land in the 'public' directory which will include index.php file.
+2. index.php file will then instantiate a new App instance by calling app/core/App.php.
+3. app/core/App.php will read the url and call appropriate Controller from app/controllers
+4. Controller will proceed to load appropriate View (from app/views)
+

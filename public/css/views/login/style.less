@@ -1,0 +1,129 @@
+@import (reference) '../../../css/framework/less/index/index.less';
+// Overwriting Body
+body {
+  background-color: @primary-color;
+}
+// Overwriting Nav
+.nav {
+  box-shadow: none;
+}
+
+// Login Page styles
+// Clouds
+.cloud {
+  position: absolute;
+  z-index: -1;
+  &-1 {
+    top: 10%;
+    right: 20%;
+    opacity: 0.95;
+  }
+  &-2 {
+    top: 35%;
+    left: 10%;
+    width: 100px;
+    opacity: 0.7;
+  }
+}
+
+// Actual form
+.form-wrapper {
+  .grid-row;
+  background-color: white;
+
+  @media @tablet {
+    background: none;
+  }
+}
+
+.form {
+  @media @tablet {
+    .push-down-5;
+    .box-shadow-1;
+    width: 500px;
+    color: @black-text-color;
+    justify-self: center;
+    background-color: white;
+    margin-top: 70px;
+    border-radius: 7px;
+  }
+}
+
+.form__top {
+  .pad-7;
+  border-radius: 7px 7px 0 0;
+  border-bottom: solid 1px #e9e9e9;
+  background-color: @background-color1;
+}
+
+.form__bottom {
+  .grid-row;
+  .pad-tb-7;
+  .pad-lr-10;
+  border-radius: 0 0 7px 7px;
+}
+
+.heading {
+  .secondary-font;
+}
+
+.input-row {
+  .input-wrapper;
+  grid-template-columns: 70px 1fr;
+
+  .push-down-2;
+
+  &--first {
+    .push-down-5;
+  }
+  &--last {
+    .push-down-9;
+  }
+}
+
+.input-row__label {
+  .input-wrapper__icon;
+  color: @black-text-color;
+
+  &--first:before {
+    content: '\f2eb';
+  }
+  &--last:before {
+    content: '\f392';
+  }
+}
+
+.input-row__input {
+  .input-wrapper__input(left);
+}
+
+.submit,
+.register {
+  .pad-3;
+  .kilo;
+  display: block;
+  width: max-content;
+}
+
+.submit {
+  .btn(@secondary-color);
+  .pad-lr-10;
+  .push-down-5;
+  justify-self: end;
+}
+
+.register {
+  .push-down-10;
+  .pad-lr-7;
+  .btn(@block-background-color);
+  color: @black-text-color;
+  border: solid 1px @block-border-color;
+  box-shadow: none;
+  justify-self: center;
+
+  @media @tablet {
+    .btn(@block-background-color);
+    color: @black-text-color;
+    border: none;
+  }
+}

@@ -1,0 +1,3 @@
+1. ANY files that are classes, file name must start with a capital letter (User.php i.e)
+2. Model file names must be singular (not plural)
+3. Controller file names must be plural

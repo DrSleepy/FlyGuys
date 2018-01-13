@@ -1,0 +1,54 @@
+@import (reference) '../../../css/framework/less/index/index.less';
+
+.nav {
+  .push-down-7;
+  .box-shadow-1;
+  background-color: @primary-color;
+}
+
+.nav__content {
+  .container;
+  .grid-column;
+  .pad-5;
+  .col-gap-5;
+  grid-template-columns: max-content 1fr max-content;
+  color: white;
+  align-items: center;
+}
+
+.nav__logo {
+  width: 30px;
+}
+
+.flight,
+.guys {
+  color: white;
+}
+
+.flight {
+  .secondary-font;
+}
+.guys {
+  .secondary-font-light;
+}
+
+.nav__links {
+  .container;
+  .grid-column;
+  .col-gap-6;
+  align-items: center;
+  grid-template-columns: 1fr max-content;
+}
+
+.nav__links-item {
+  .secondary-font;
+  letter-spacing: 1px;
+}
+
+.nav__links-item--login {
+  .btn(white);
+  .pad-tb-3;
+  .pad-lr-5;
+  transition: 0.3s;
+  color: @gray-text-color;
+}
