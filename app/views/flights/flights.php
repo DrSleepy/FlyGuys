@@ -55,7 +55,7 @@
 
     <article class="flight-wrapper">
       <header class="flight-header">
-        <img class="flight-header__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/bing.svg">
+        <img class="flight-header__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/airline_logo.svg">
         <h2 class="flight-header__airline"> Emirates Airline </h2>
         <p class="flight-header__price"> £604 </p>
         <button class="flight-header__button"> Add to cart </button>
@@ -100,7 +100,7 @@
 
     <article class="flight-wrapper">
       <header class="flight-header">
-        <img class="flight-header__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/bing.svg">
+        <img class="flight-header__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/airline_logo.svg">
         <h2 class="flight-header__airline"> Emirates Airline </h2>
         <p class="flight-header__price"> £605 </p>
         <button class="flight-header__button"> Add to cart </button>
@@ -145,7 +145,7 @@
 
     <article class="flight-wrapper">
       <header class="flight-header">
-        <img class="flight-header__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/bing.svg">
+        <img class="flight-header__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/airline_logo.svg">
         <h2 class="flight-header__airline"> Emirates Airline </h2>
         <p class="flight-header__price"> £607 </p>
         <button class="flight-header__button"> Add to cart </button>
@@ -175,7 +175,7 @@
 
     <article class="flight-wrapper">
       <header class="flight-header">
-        <img class="flight-header__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/bing.svg">
+        <img class="flight-header__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/airline_logo.svg">
         <h2 class="flight-header__airline"> Emirates Airline </h2>
         <p class="flight-header__price"> £607 </p>
         <button class="flight-header__button"> Add to cart </button>
@@ -205,7 +205,7 @@
 
     <article class="flight-wrapper">
       <header class="flight-header">
-        <img class="flight-header__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/bing.svg">
+        <img class="flight-header__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/airline_logo.svg">
         <h2 class="flight-header__airline"> Emirates Airline </h2>
         <p class="flight-header__price"> £607 </p>
         <button class="flight-header__button"> Add to cart </button>

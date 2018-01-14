@@ -1,11 +1,10 @@
+
+<!-- purple block -->
+<div class="background">
+
 <?php require APP_ROOT . '/views/includes/header.php'; ?>
 <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_ROOT; ?>/css/views/home/style.css">  
 
-<!-- HOME PAGE TEST -->
-<!-- Yellow block -->
-<div class="background">
-  <div class="wrapper"> 
-    
     <header class="header">
       <div class="header__info">
         <h1 class="header__title"> Fly Guys </h1>
@@ -18,8 +17,7 @@
       </div>
       <a class="header__button" href="<?php echo PUBLIC_ROOT . '/flights/flights' ?>"> View Flights </a>
     </header>
-
-  </div>
+    
 </div>
 
 <!-- Underneath yellow block -->

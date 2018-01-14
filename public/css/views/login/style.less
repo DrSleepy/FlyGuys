@@ -1,10 +1,11 @@
 @import (reference) '../../../css/framework/less/index/index.less';
 // Overwriting Body
 body {
-  background-color: @primary-color;
+  background-image: @purple-theme;
 }
 // Overwriting Nav
 .nav {
+  background: none;
   box-shadow: none;
 }
 
@@ -29,29 +30,12 @@ body {
 // Actual form
 .form-wrapper {
   .grid-row;
-  background-color: white;
-
-  @media @tablet {
-    background: none;
-  }
 }
-
 .form {
-  @media @tablet {
-    .push-down-5;
-    .box-shadow-1;
-    width: 500px;
-    color: @black-text-color;
-    justify-self: center;
-    background-color: white;
-    margin-top: 70px;
-    border-radius: 7px;
-  }
+  .push-down-8;
 }
-
 .form__top {
   .pad-7;
-  border-radius: 7px 7px 0 0;
   border-bottom: solid 1px #e9e9e9;
   background-color: @background-color1;
 }
@@ -60,7 +44,7 @@ body {
   .grid-row;
   .pad-tb-7;
   .pad-lr-10;
-  border-radius: 0 0 7px 7px;
+  background-color: white;
 }
 
 .heading {
@@ -117,13 +101,31 @@ body {
   .pad-lr-7;
   .btn(@block-background-color);
   color: @black-text-color;
-  border: solid 1px @block-border-color;
-  box-shadow: none;
   justify-self: center;
+  border: none;
+}
 
-  @media @tablet {
-    .btn(@block-background-color);
+//--------------------TABLET---------------------
+@media @tablet {
+  .form-wrapper {
+    background: none;
+  }
+
+  .form {
+    .box-shadow-1;
+    width: 500px;
     color: @black-text-color;
-    border: none;
+    justify-self: center;
+    background-color: white;
+    margin-top: 70px;
+    border-radius: 7px;
+  }
+
+  .form__top {
+    border-radius: 7px 7px 0 0;
+  }
+
+  .form__bottom {
+    border-radius: 0 0 7px 7px;
   }
 }

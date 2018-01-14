@@ -35,7 +35,7 @@
 .nav__links {
   .container;
   .grid-column;
-  .col-gap-6;
+  .col-gap-3;
   align-items: center;
   grid-template-columns: 1fr max-content;
 }
@@ -45,10 +45,21 @@
   letter-spacing: 1px;
 }
 
+.nav__links-item--cart {
+  .btn(@secondary-color);
+  .pad-tb-3;
+  .pad-lr-5;
+
+  &:before {
+    .icon-font;
+    .push-right-2;
+    content: '\f370';
+  }
+}
+
 .nav__links-item--login {
   .btn(white);
   .pad-tb-3;
   .pad-lr-5;
-  transition: 0.3s;
   color: @gray-text-color;
 }

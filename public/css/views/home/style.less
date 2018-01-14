@@ -2,16 +2,19 @@
 // Overwriting nav
 .nav {
   .push-down-0;
+  height: max-content;
+  box-shadow: none;
 }
 
 .background {
   background-color: @primary-color;
+  height: max-content;
 }
 
 .header {
   .pad-10;
   .grid-row;
-  .col-gap-10;
+  .col-gap-0;
   grid-template-columns: repeat(2, max-content);
   align-items: center;
   justify-content: center;
@@ -33,10 +36,6 @@
   position: relative;
   height: 140px;
   width: 300px;
-
-  @media @tablet {
-    display: block;
-  }
 }
 
 .header__images-item {
@@ -62,7 +61,6 @@
 .header__button {
   .span-col-1-3;
   .btn(@secondary-color);
-
   .pad-tb-4;
   .pad-lr-10;
   .secondary-font;
@@ -82,12 +80,6 @@
   .grid-row;
   .row-gap-5;
   grid-template-columns: 1fr;
-
-  @media @laptop {
-    .col-gap-5;
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 1200px;
-  }
 }
 
 .section__heading {
@@ -126,4 +118,26 @@
   border-radius: 4px 4px 0 0;
   transition: 250ms;
   filter: brightness(70%);
+}
+
+//--------------------TABLET---------------------
+@media @tablet {
+  .header {
+    .col-gap-5;
+  }
+  .header__images {
+    display: block;
+  }
+}
+
+//--------------------LAPTOP---------------------
+@media @laptop {
+  .header {
+    .col-gap-10;
+  }
+  .special-offers {
+    .col-gap-5;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+  }
 }
