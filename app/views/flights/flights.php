@@ -33,68 +33,6 @@
     <button type="submit" class="search-button"></button>
   </form>
 
-
-</div>
-
-
-<!-- <div class="wrapper wrapper-custom">
-  <header class="header">
-    <h1 class="title">Compare cheap flights</h1>
-    <p class="text"> It’s deals time! Search to see prices from a huge range of airlines </p>
-  </header>
-
-  <form class="search-wrapper">
-    <label class="search__label search__label--from" for="from"> From </label>
-    <label class="search__label search__label--to" for="to"> To </label>
-    <label class="search__label search__label--adults" for="adults"> Adults </label>
-    <label class="search__label search__label--kids" for="kids"> Age 2-11 </label>
-    <label class="search__label search__label--infants" for="infants"> Under 2 </label>
-
-    <input id="from" class="search__input search__input--from" type="text" placeholder="Enter Airport">
-    <input id="to" class="search__input search__input--to" type="text" placeholder="Enter Airport">
-    <input id="adults" class="search__input search__input--adults" type="number">
-    <input id="kids" class="search__input search__input--kids" type="number">
-    <input id="infants" class="search__input search__input--infants" type="number">
-
-    <input id="from" class="search__input search__input--from" type="text" placeholder="Enter Airport">
-    <input id="to" class="search__input search__input--to" type="text" placeholder="Enter Airport">
-    <select class="search__input search__input--adults">
-      <option>1</option>
-      <option>2</option>  
-      <option>3</option>
-      <option>4</option>
-      <option>5</option> 
-    </select>
-    <select class="search__input search__input--kids">
-      <option>1</option>
-      <option>2</option>  
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-    <select class="search__input search__input--infants">
-      <option>1</option>
-      <option>2</option>  
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-    
-    <button type="submit" class="search-button"></button>
-
-    <div class="checkbox-options">
-      <div class="checkbox-wrapper">
-        <input id="one-way" class="checkbox" type="checkbox">
-        <label class="checkbox__label" for="one-way">One Way</label>
-      </div>
-      
-      <div class="checkbox-wrapper">
-        <input id="two-way" class="checkbox" type="checkbox">
-        <label class="checkbox__label" for="two-way">Two Way</label>
-      </div>
-    </div>
-  </form>
-
   <section class="selections-wrapper">
     <p> View </p>
     <select class="select-menu select-menu--first">
@@ -113,58 +51,190 @@
     </select>
   </section>
 
-  <div class="flights-list">
+  <section class="flights-list">
 
     <article class="flight-wrapper">
-      <img class="flight__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/rocket.png">
-      
-      <p class="flight__label flight__label--from" > From: </p>
-      <p class="flight__label flight__label--to" > To: </p>
-      <p class="flight__label flight__label--departure" > Departure: </p>
-      <p class="flight__label flight__label--return" > Return: </p>
-      
-      <p class="flight__data flight__data--from" > London, Heathrow </p>
-      <p class="flight__data flight__data--to" > Sudan, Khartoum </p>
-      <p class="flight__data flight__data--departure" > July 27, 08:30am </p>
-      <p class="flight__data flight__data--return" > July 29, 05:25pm </p>
+      <header class="flight-header">
+        <img class="flight-header__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/bing.svg">
+        <h2 class="flight-header__airline"> Emirates Airline </h2>
+        <p class="flight-header__price"> £604 </p>
+        <button class="flight-header__button"> Add to cart </button>
+      </header>
 
-      <p class="flight__price"> £604 </p>
-      <button class="flight__book"> Add to cart </button>
+      <div class="flight-bound">
+        <!-- outbound -->        
+        <div class="flight-left">
+          <i class="flight-left__plane-icon flight-left__plane-icon--outbound"></i>
+          <p class="flight-left__subheading"> Outbound </p>
+          <p class="flight-left__date"> 17 Jan Wed </p>        
+        </div>
+
+        <div class="flight-right">
+          <p class="flight-right--from flight-right__time"> 08:35 </p>
+          <p class="flight-right--from flight-right__location"> London </p>
+          <p class="flight-right--from flight-right__airport"> Heathrow </p>
+
+          <p class="flight-right--to flight-right__time"> 11:55 </p>
+          <p class="flight-right--to flight-right__location"> Sudan </p>
+          <p class="flight-right--to flight-right__airport"> Khartoum </p>
+        </div>
+
+        <!-- inbound -->
+        <div class="flight-left">
+          <i class="flight-left__plane-icon flight-left__plane-icon--inbound"></i>
+          <p class="flight-left__subheading"> Outbound </p>
+          <p class="flight-left__date"> 17 Jan Wed </p>        
+        </div>
+
+        <div class="flight-right">
+          <p class="flight-right--from flight-right__time"> 08:35 </p>
+          <p class="flight-right--from flight-right__location"> London </p>
+          <p class="flight-right--from flight-right__airport"> Heathrow </p>
+
+          <p class="flight-right--to flight-right__time"> 11:55 </p>
+          <p class="flight-right--to flight-right__location"> Sudan </p>
+          <p class="flight-right--to flight-right__airport"> Khartoum </p>
+        </div>
+      </div>
     </article>
+
     <article class="flight-wrapper">
-      <img class="flight__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/rocket.png">
-      
-      <p class="flight__label flight__label--from" > From: </p>
-      <p class="flight__label flight__label--to" > To: </p>
-      <p class="flight__label flight__label--departure" > Departure: </p>
-      <p class="flight__label flight__label--return" > Return: </p>
-      
-      <p class="flight__data flight__data--from" > London, Heathrow </p>
-      <p class="flight__data flight__data--to" > Sudan, Khartoum </p>
-      <p class="flight__data flight__data--departure" > July 27, 08:30am </p>
-      <p class="flight__data flight__data--return" > July 29, 05:25pm </p>
+      <header class="flight-header">
+        <img class="flight-header__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/bing.svg">
+        <h2 class="flight-header__airline"> Emirates Airline </h2>
+        <p class="flight-header__price"> £605 </p>
+        <button class="flight-header__button"> Add to cart </button>
+      </header>
 
-      <p class="flight__price"> £604 </p>
-      <button class="flight__book"> Add to cart </button>
+      <div class="flight-bound">
+        <!-- outbound -->        
+        <div class="flight-left">
+          <i class="flight-left__plane-icon flight-left__plane-icon--outbound"></i>
+          <p class="flight-left__subheading"> Outbound </p>
+          <p class="flight-left__date"> 17 Jan Wed </p>        
+        </div>
+
+        <div class="flight-right">
+          <p class="flight-right--from flight-right__time"> 08:35 </p>
+          <p class="flight-right--from flight-right__location"> London </p>
+          <p class="flight-right--from flight-right__airport"> Heathrow </p>
+
+          <p class="flight-right__time"> 11:55 </p>
+          <p class="flight-right__location"> Sudan </p>
+          <p class="flight-right__airport"> Khartoum </p>
+        </div>
+
+        <!-- inbound -->
+        <div class="flight-left">
+          <i class="flight-left__plane-icon flight-left__plane-icon--inbound"></i>
+          <p class="flight-left__subheading"> Outbound </p>
+          <p class="flight-left__date"> 17 Jan Wed </p>        
+        </div>
+
+        <div class="flight-right">
+          <p class="flight-right--from flight-right__time"> 08:35 </p>
+          <p class="flight-right--from flight-right__location"> London </p>
+          <p class="flight-right--from flight-right__airport"> Heathrow </p>
+
+          <p class="flight-right__time"> 11:55 </p>
+          <p class="flight-right__location"> Sudan </p>
+          <p class="flight-right__airport"> Khartoum </p>
+        </div>
+      </div>
     </article>
+
     <article class="flight-wrapper">
-      <img class="flight__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/rocket.png">
-      
-      <p class="flight__label flight__label--from" > From: </p>
-      <p class="flight__label flight__label--to" > To: </p>
-      <p class="flight__label flight__label--departure" > Departure: </p>
-      <p class="flight__label flight__label--return" > Return: </p>
-      
-      <p class="flight__data flight__data--from" > London, Heathrow </p>
-      <p class="flight__data flight__data--to" > Sudan, Khartoum </p>
-      <p class="flight__data flight__data--departure" > July 27, 08:30am </p>
-      <p class="flight__data flight__data--return" > July 29, 05:25pm </p>
+      <header class="flight-header">
+        <img class="flight-header__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/bing.svg">
+        <h2 class="flight-header__airline"> Emirates Airline </h2>
+        <p class="flight-header__price"> £607 </p>
+        <button class="flight-header__button"> Add to cart </button>
+      </header>
 
-      <p class="flight__price"> £604 </p>
-      <button class="flight__book"> Add to cart </button>
+      <div class="flight-bound">
+        <!-- outbound -->        
+        <div class="flight-left">
+          <i class="flight-left__plane-icon flight-left__plane-icon--outbound"></i>
+          <p class="flight-left__subheading"> Outbound </p>
+          <p class="flight-left__date"> 17 Jan Wed </p>        
+        </div>
+
+        <div class="flight-right">
+          <p class="flight-right--from flight-right__time"> 08:35 </p>
+          <p class="flight-right--from flight-right__location"> London </p>
+          <p class="flight-right--from flight-right__airport"> Heathrow </p>
+
+          <p class="flight-right__time"> 11:55 </p>
+          <p class="flight-right__location"> Sudan </p>
+          <p class="flight-right__airport"> Khartoum </p>
+        </div>
+
+        <!-- not inbound info -->
+      </div>
     </article>
+
+    <article class="flight-wrapper">
+      <header class="flight-header">
+        <img class="flight-header__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/bing.svg">
+        <h2 class="flight-header__airline"> Emirates Airline </h2>
+        <p class="flight-header__price"> £607 </p>
+        <button class="flight-header__button"> Add to cart </button>
+      </header>
+
+      <div class="flight-bound">
+        <!-- outbound -->        
+        <div class="flight-left">
+          <i class="flight-left__plane-icon flight-left__plane-icon--outbound"></i>
+          <p class="flight-left__subheading"> Outbound </p>
+          <p class="flight-left__date"> 17 Jan Wed </p>        
+        </div>
+
+        <div class="flight-right">
+          <p class="flight-right--from flight-right__time"> 08:35 </p>
+          <p class="flight-right--from flight-right__location"> London </p>
+          <p class="flight-right--from flight-right__airport"> Heathrow </p>
+
+          <p class="flight-right__time"> 11:55 </p>
+          <p class="flight-right__location"> Sudan </p>
+          <p class="flight-right__airport"> Khartoum </p>
+        </div>
+
+        <!-- not inbound info -->
+      </div>
+    </article>
+
+    <article class="flight-wrapper">
+      <header class="flight-header">
+        <img class="flight-header__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/bing.svg">
+        <h2 class="flight-header__airline"> Emirates Airline </h2>
+        <p class="flight-header__price"> £607 </p>
+        <button class="flight-header__button"> Add to cart </button>
+      </header>
+
+      <div class="flight-bound">
+        <!-- outbound -->        
+        <div class="flight-left">
+          <i class="flight-left__plane-icon flight-left__plane-icon--outbound"></i>
+          <p class="flight-left__subheading"> Outbound </p>
+          <p class="flight-left__date"> 17 Jan Wed </p>        
+        </div>
+
+        <div class="flight-right">
+          <p class="flight-right--from flight-right__time"> 08:35 </p>
+          <p class="flight-right--from flight-right__location"> London </p>
+          <p class="flight-right--from flight-right__airport"> Heathrow </p>
+
+          <p class="flight-right__time"> 11:55 </p>
+          <p class="flight-right__location"> Sudan </p>
+          <p class="flight-right__airport"> Khartoum </p>
+        </div>
+
+        <!-- not inbound info -->
+      </div>
+    </article>
+
+  </section>
 
 </div>
 
-</div> -->
 <?php require APP_ROOT . '/views/includes/footer.php'; ?>

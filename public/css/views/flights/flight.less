@@ -1,0 +1,138 @@
+@import (reference) '../../../css/framework/less/index/index.less';
+.flight-wrapper {
+  border-top: solid 1px @block-border-color;
+  background-color: white;
+  border-bottom: none;
+}
+
+.flight-header {
+  .grid-row;
+  .col-gap-5;
+  .pad-5;
+  border-bottom: solid 1px @block-border-color;
+  grid-template-columns: max-content 1fr repeat(2, max-content);
+  align-items: center;
+
+  &__logo {
+    .width-height-5;
+  }
+  &__airline {
+    .main-font;
+    .mega;
+  }
+  &__price {
+    .main-font-medium;
+    .giga;
+  }
+  &__button {
+    .btn(@primary-color);
+    .pad-tb-3;
+    .pad-lr-5;
+  }
+}
+
+.flight-bound {
+  .grid-row;
+  .row-gap-5;
+  .pad-5;
+  grid-template-columns: 1fr 1fr;
+}
+
+.flight-left {
+  .grid-row;
+  .col-gap-6;
+  justify-content: center;
+  justify-items: end;
+  align-items: center;
+  align-content: center;
+
+  &__plane-icon {
+    .col-cell-1;
+    .span-row-1-3;
+    .icon-font;
+    font-size: 25px;
+
+    // circle test
+    .grid-row;
+    background-color: red;
+    height: 50px;
+    width: 50px;
+    justify-content: center;
+    align-content: center;
+    border-radius: 50%;
+    background-color: @background-color2;
+    color: @black-text-color;
+
+    &--outbound {
+      transform: rotate(90deg);
+      &:before {
+        content: '\f3a4';
+      }
+    }
+    &--inbound {
+      transform: rotate(-90deg);
+      &:before {
+        content: '\f3a4';
+      }
+    }
+  }
+
+  &__subheading {
+    .col-cell-2;
+    .row-cell-1;
+    .main-font-bold;
+    align-self: end;
+  }
+  &__date {
+    .col-cell-2;
+    .row-cell-2;
+    color: @gray-text-color;
+  }
+}
+
+.flight-right {
+  .grid-column;
+  .col-gap-10;
+  grid-template-columns: max-content max-content;
+  grid-template-rows: repeat(3, max-content);
+  color: @gray-text-color;
+
+  &--from {
+    justify-self: end;
+  }
+  &__time {
+    .main-font-bold;
+    color: @black-text-color;
+  }
+}
+
+// --------------------LAPTOP--------------------
+@media @laptop {
+  .flights-list {
+    .grid-row;
+    .gap-5;
+    justify-content: center;
+    grid-template-columns: repeat(2, max-content);
+    grid-auto-rows: max-content;
+  }
+
+  .flight-wrapper {
+    .box-shadow-1;
+    border: solid 1px @block-border-color;
+    border-radius: 4px;
+    width: max-content;
+  }
+
+  .flight-header {
+    border-radius: 4px 4px 0 0;
+    border-bottom: solid 1px @block-border-color;
+  }
+
+  .flight-bound {
+    .pad-lr-10;
+  }
+
+  .flight-left {
+    .push-right-10;
+  }
+}

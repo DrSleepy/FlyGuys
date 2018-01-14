@@ -18,8 +18,8 @@
       </div>
 
       <div class="input-row input-row--second">
-        <label class="input-row__label" for="email"> Email: </label>
-        <input class="input-row__input" id="email" type="email" required>
+        <label class="input-row__label" for="email_confirm"> Email: </label>
+        <input class="input-row__input" id="email_confirm" type="email" placeholder="confirm" required>
       </div>
   
       <div class="input-row">

@@ -2,6 +2,7 @@
 
 // Components
 @import './search.less';
+@import './flight.less';
 
 .wrapper {
   &-custom {
@@ -9,6 +10,7 @@
   }
 }
 
+// Heading
 .header {
   .pad-lr-5;
 
@@ -18,5 +20,25 @@
   }
   &__text {
     .push-down-7;
+  }
+}
+
+// Dropdown options (view/sort)
+.selections-wrapper {
+  .grid-column;
+  .push-down-5;
+  .col-gap-3;
+  .pad-lr-3;
+  justify-content: end;
+  align-items: center;
+}
+
+.select-menu {
+  .pad-3;
+  border-radius: 4px;
+  border: solid 1px @block-border-color;
+
+  &--first {
+    .push-right-5;
   }
 }
