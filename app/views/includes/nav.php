@@ -12,9 +12,9 @@
     </h1>
 
     <div class="nav__links">
-      <a class="nav__links-item"> Flights </a>
+      <!-- <a class="nav__links-item"> Flights </a>
       <a class="nav__links-item"> About Us </a>
-      <a class="nav__links-item"> Account </a>
+      <a class="nav__links-item"> Account </a> -->
       <a class=" nav__links-item nav__links-item--login" href="<?php echo PUBLIC_ROOT . '/users/login' ?>">Login</a>
     </div>
 

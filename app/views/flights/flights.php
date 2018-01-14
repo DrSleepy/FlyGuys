@@ -1,6 +1,43 @@
 <?php require APP_ROOT . '/views/includes/header.php'; ?>
 <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_ROOT; ?>/css/views/flights/style.css">  
+
 <div class="wrapper wrapper-custom">
+  <header class="header">
+    <h1 class="header__title">Compare cheap flights</h1>
+    <p class="header__text"> It’s deals time! Search to see prices from a huge range of airlines </p>
+  </header>
+
+  <form class="search-wrapper">
+    <label class="search__label search__label--from" for="from"> Leaving from </label>
+    <label class="search__label search__label--to" for="to"> Going to </label>
+    <label class="search__label search__label--leaving" for="leaving"> Leaving on </label>
+    <label class="search__label search__label--returning" for="returning"> Returning on </label>
+
+    <input id="from" class="search__input search__input--from" type="text" placeholder="Enter airport">
+    <input id="to" class="search__input search__input--to" type="text" placeholder="Enter airport">
+    <input id="leaving" class="search__input search__input--leaving" type="date">
+    <input id="returning" class="search__input search__input--returning" type="date">
+
+    <div class="checkbox-options">
+      <div class="checkbox-wrapper">
+        <input id="one-way" class="checkbox" type="checkbox">
+        <label class="checkbox__label" for="one-way">One Way</label>
+      </div>
+    
+      <div class="checkbox-wrapper">
+        <input id="two-way" class="checkbox" type="checkbox">
+        <label class="checkbox__label" for="two-way">Two Way</label>
+      </div>
+    </div>
+
+    <button type="submit" class="search-button"></button>
+  </form>
+
+
+</div>
+
+
+<!-- <div class="wrapper wrapper-custom">
   <header class="header">
     <h1 class="title">Compare cheap flights</h1>
     <p class="text"> It’s deals time! Search to see prices from a huge range of airlines </p>
@@ -13,11 +50,11 @@
     <label class="search__label search__label--kids" for="kids"> Age 2-11 </label>
     <label class="search__label search__label--infants" for="infants"> Under 2 </label>
 
-    <!-- <input id="from" class="search__input search__input--from" type="text" placeholder="Enter Airport">
+    <input id="from" class="search__input search__input--from" type="text" placeholder="Enter Airport">
     <input id="to" class="search__input search__input--to" type="text" placeholder="Enter Airport">
     <input id="adults" class="search__input search__input--adults" type="number">
     <input id="kids" class="search__input search__input--kids" type="number">
-    <input id="infants" class="search__input search__input--infants" type="number"> -->
+    <input id="infants" class="search__input search__input--infants" type="number">
 
     <input id="from" class="search__input search__input--from" type="text" placeholder="Enter Airport">
     <input id="to" class="search__input search__input--to" type="text" placeholder="Enter Airport">
@@ -78,7 +115,7 @@
 
   <div class="flights-list">
 
-    <article class="flight-wrapper"> <!-- This element will be dynamically duplicated  -->
+    <article class="flight-wrapper">
       <img class="flight__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/rocket.png">
       
       <p class="flight__label flight__label--from" > From: </p>
@@ -92,9 +129,9 @@
       <p class="flight__data flight__data--return" > July 29, 05:25pm </p>
 
       <p class="flight__price"> £604 </p>
-      <button class="flight__book"> Book </button>
+      <button class="flight__book"> Add to cart </button>
     </article>
-    <article class="flight-wrapper"> <!-- This element will be dynamically duplicated  -->
+    <article class="flight-wrapper">
       <img class="flight__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/rocket.png">
       
       <p class="flight__label flight__label--from" > From: </p>
@@ -108,9 +145,9 @@
       <p class="flight__data flight__data--return" > July 29, 05:25pm </p>
 
       <p class="flight__price"> £604 </p>
-      <button class="flight__book"> Book </button>
+      <button class="flight__book"> Add to cart </button>
     </article>
-    <article class="flight-wrapper"> <!-- This element will be dynamically duplicated  -->
+    <article class="flight-wrapper">
       <img class="flight__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/rocket.png">
       
       <p class="flight__label flight__label--from" > From: </p>
@@ -124,10 +161,10 @@
       <p class="flight__data flight__data--return" > July 29, 05:25pm </p>
 
       <p class="flight__price"> £604 </p>
-      <button class="flight__book"> Book </button>
+      <button class="flight__book"> Add to cart </button>
     </article>
 
 </div>
 
-</div>
+</div> -->
 <?php require APP_ROOT . '/views/includes/footer.php'; ?>
