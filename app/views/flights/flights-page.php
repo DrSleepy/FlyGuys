@@ -36,7 +36,6 @@
   <!-- Importing in flight(s) -->
   <?php require APP_ROOT . '/views/flights/flight.php'; ?>
 
-
   </section>
 
 </div>

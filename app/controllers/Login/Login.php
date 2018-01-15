@@ -11,7 +11,7 @@ class Login extends Controller
   // Default method - Will run if no method is called
   function index($name = ' ')
   {
-    $this->view('Login/Login-page', "ha");
+    $this->view('login/login-page', "ha");
   }
 
   function login()

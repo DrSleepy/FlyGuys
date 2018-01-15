@@ -11,7 +11,7 @@ class Checkout extends Controller
   // Default method - Will run if no method is called
   function index($name = ' ')
   {
-    $this->view('Checkout/Checkout', "default data passed here");
+    $this->view('checkout/checkout-page', "default data passed here");
   }
 
 }

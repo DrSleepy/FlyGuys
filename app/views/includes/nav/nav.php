@@ -19,17 +19,13 @@
       <a class="nav__links-item nav__links-item--register" href="<?php echo PUBLIC_ROOT; ?>/Register"> Register </a>      
       
       <!-- Importing in cart dropdown. Absolutely positioned -->
-      <div class="dropdown-cart-wrapper">
-        <?php require APP_ROOT . '/views/includes/nav/cart.php' ?>
-      </div>
+      <?php include APP_ROOT . '/views/includes/nav/cart.php' ?>
       
       <i class="nav__links-item--hamburger"></i> <!-- Apprears only on mobile -->
 
       <!-- Importing in mobile navigation. Absolutely positioned -->
-      <div class="dropdown-nav-wrapper">
-        <?php require APP_ROOT . '/views/includes/nav/mobile-nav.php' ?>
-      </div>
-
+      <?php require APP_ROOT . '/views/includes/nav/mobile-nav.php' ?>
+      
     </div> <!-- end of nav__links  -->
   </div> <!-- end of nav__content  -->
 </nav>
