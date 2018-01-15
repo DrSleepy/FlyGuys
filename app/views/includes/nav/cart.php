@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_ROOT; ?>/css/views/nav/cart/style.css">  
 
-<section class="dropdown-cart"> <!-- cart dropdown. Absolutely position -->
+<section id="dropdown-cart" class="dropdown-cart"> <!-- cart dropdown. Absolutely position -->
   <header class="dropdown-nav__header">
     <h2 class="dropdown-nav__heading"> Cart </h2>
     <i class="dropdown-nav__icon"> </i>

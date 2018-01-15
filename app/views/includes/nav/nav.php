@@ -11,21 +11,23 @@
     </h1>
 
     <div class="nav__links"> <!-- right section of navigation -->
+      <a class="nav__links-item" href="<?php echo PUBLIC_ROOT; ?>"> Home </a>
       <a class="nav__links-item"> Flights </a>
       <a class="nav__links-item"> Promotions </a>      
       <a class="nav__links-item nav__links-item--last"> Wishlist </a>
-      <a class="nav__links-item nav__links-item--cart" href=""> Cart </a>
+      <button id="cart-button" class="nav__links-item nav__links-item--cart"> Cart </button>
       <a class="nav__links-item nav__links-item--login" href="<?php echo PUBLIC_ROOT; ?>/Login"> Login </a>
       <a class="nav__links-item nav__links-item--register" href="<?php echo PUBLIC_ROOT; ?>/Register"> Register </a>      
-      
       <!-- Importing in cart dropdown. Absolutely positioned -->
       <?php include APP_ROOT . '/views/includes/nav/cart.php' ?>
       
-      <i class="nav__links-item--hamburger"></i> <!-- Apprears only on mobile -->
+      <i id="hamburger" class="nav__links-item--hamburger"></i> <!-- Apprears only on mobile -->
 
       <!-- Importing in mobile navigation. Absolutely positioned -->
       <?php require APP_ROOT . '/views/includes/nav/mobile-nav.php' ?>
-      
+
     </div> <!-- end of nav__links  -->
   </div> <!-- end of nav__content  -->
 </nav>
+
+<!-- <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_ROOT; ?>/js/views"> -->
