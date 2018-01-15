@@ -26,7 +26,7 @@
     </div>
   </form>
 
-  <a class="register" href="<?php echo PUBLIC_ROOT . '/users/register' ?>"> No account? Register</a>
+  <a class="register" href="<?php echo PUBLIC_ROOT . '/Register' ?>"> No account? Register</a>
 </div>
 
 

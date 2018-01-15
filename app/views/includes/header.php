@@ -9,5 +9,5 @@
   <title><?php echo SITE_NAME ?></title>
 </head>
 <body>
-<?php require APP_ROOT . '/views/includes/nav.php' ?>
+<?php require APP_ROOT . '/views/includes/nav/nav.php' ?>
   

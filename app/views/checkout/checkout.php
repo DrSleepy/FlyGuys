@@ -24,7 +24,7 @@
         </div>
 
         <div class="section__row">
-          <label class="section__label" for=""> Last name </label>
+          <label class="section__label" for=""> First name </label>
           <input class="section__input" type="text">
         </div>
 
@@ -58,7 +58,7 @@
 
       <section class="section section--last">
         <header class="section__header">
-          <i class="header__icon header__icon--2"></i>
+          <i class="header__icon header__icon--3"></i>
           <h2 class="header__heading"> Address Information </h2>
         </header>
 

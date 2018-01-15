@@ -36,7 +36,7 @@
     </div>
   </form>
 
-  <a class="register" href="<?php echo PUBLIC_ROOT . '/users/login' ?>"> Have an account? Login</a>
+  <a class="register" href="<?php echo PUBLIC_ROOT . '/Login' ?>"> Have an account? Login</a>
 </div>
 
 

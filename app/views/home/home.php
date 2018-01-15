@@ -15,7 +15,7 @@
         <img class="header__images-item cloud-2" src="<?php echo PUBLIC_ROOT; ?>/img/icons/clouds.png">
         <img class="header__images-item rocket" src="<?php echo PUBLIC_ROOT; ?>/img/icons/rocket.png">
       </div>
-      <a class="header__button" href="<?php echo PUBLIC_ROOT . '/flights/flights' ?>"> View Flights </a>
+      <a class="header__button" href="<?php echo PUBLIC_ROOT . '/Flights' ?>"> View Flights </a>
     </header>
     
 </div>

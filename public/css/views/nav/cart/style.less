@@ -1,0 +1,100 @@
+@import (reference) '../../../../css/framework/less/index/index.less';
+
+.dropdown-cart {
+  .grid-row;
+  .box-shadow-2;
+  .bounce-out-animation;
+  z-index: 1;
+  border-radius: 4px;
+  position: absolute;
+  margin-top: 5px;
+  top: 100%;
+  right: 0px;
+  background: white;
+  color: @black-text-color;
+}
+
+.dropdown__flight-wrapper {
+  .grid-column;
+  .col-gap-5;
+  .pad-tb-3;
+  .pad-lr-7;
+  .milli;
+  border-bottom: solid 1px #eee;
+}
+
+.dropdown__flight-left {
+  .grid-row;
+  .row-gap-1;
+  grid-template-columns: repeat(4, max-content);
+  justify-items: center;
+}
+
+.dropdown__flight-right {
+  .grid-column;
+  align-items: center;
+}
+
+.dropdown__flight {
+  &-icon {
+    .grid-row;
+    .icon-font;
+    .push-right-2;
+    height: 25px;
+    width: 25px;
+    justify-content: center;
+    align-content: center;
+    border-radius: 50%;
+    background-color: @background-color2;
+    color: @black-text-color;
+    &:before {
+      content: '\f3a4';
+    }
+    &--outbound {
+      transform: rotate(90deg);
+    }
+    &--inbound {
+      transform: rotate(-90deg);
+    }
+  }
+  &-date {
+    .push-right-3;
+  }
+  &-location--from {
+    justify-self: end;
+  }
+  &-location--to {
+    justify-self: start;
+  }
+  &-location,
+  &-price {
+    .push-right-4;
+    .main-font-medium;
+  }
+  &-remove:before {
+    color: red;
+    content: '\f2d7';
+  }
+}
+
+.dropdown-cart__footer {
+  .grid-column;
+  .col-gap-3;
+  .pad-tb-3;
+  .pad-lr-5;
+  border-radius: 0 0 4px 4px;
+  grid-template-columns: 1fr max-content max-content;
+  background-color: @background-color2;
+  align-items: center;
+}
+
+.dropdown-cart__checkout {
+  .btn(@secondary-color);
+  .pad-tb-3;
+  .pad-lr-5;
+  width: max-content;
+}
+
+.dropdown-cart__total-price {
+  .main-font-medium;
+}
