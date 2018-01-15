@@ -3,6 +3,7 @@
   display: none;
 
   .box-shadow-2;
+  width: 50vw;
   z-index: 1;
   border-radius: 4px;
   position: absolute;
@@ -28,21 +29,6 @@
   .giga;
 }
 
-.dropdown-nav__icon {
-  .grid-row;
-  justify-content: center;
-  align-content: center;
-  border-radius: 50%;
-  height: 25px;
-  width: 25px;
-  background-color: @black-text-color;
-  &:before {
-    .icon-font;
-    content: '\f2d7';
-    color: white;
-  }
-}
-
 .dropdown-nav__link {
   .grid-row;
   .pad-tb-4;
@@ -50,5 +36,11 @@
   justify-content: center;
   &:hover {
     background-color: @background-color2;
+  }
+}
+
+@media @tablet {
+  .dropdown-nav {
+    width: 300px;
   }
 }

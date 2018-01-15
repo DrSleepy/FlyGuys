@@ -3,7 +3,6 @@
 <section id="dropdown-cart" class="dropdown-cart"> <!-- cart dropdown. Absolutely position -->
   <header class="dropdown-nav__header">
     <h2 class="dropdown-nav__heading"> Cart </h2>
-    <i class="dropdown-nav__icon"> </i>
   </header>
 
   <div class="dropdown__flight-wrapper"> <!-- Single flight. Will be dynamically duplicated -->

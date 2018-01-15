@@ -1,7 +1,7 @@
 @import (reference) '../../../../css/framework/less/index/index.less';
 
 .dropdown-cart {
-  display: none;
+  // display: none;
 
   .box-shadow-2;
   z-index: 1;
@@ -98,4 +98,18 @@
 
 .dropdown-cart__total-price {
   .main-font-medium;
+}
+
+// --------------------TABLET--------------------
+@media @tablet {
+  .dropdown-cart {
+    .col-cell-1;
+  }
+}
+
+// --------------------LAPTOP--------------------
+@media @laptop {
+  .dropdown-cart {
+    .col-cell-5;
+  }
 }
