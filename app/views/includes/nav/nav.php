@@ -2,7 +2,7 @@
   
 <nav class="nav">
   <div class="nav__content"> <!-- left section of navigation -->
-    <img class="nav__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/rocket.png">
+    <img class="nav__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/rocket.svg">
     <h1 class="nav__title">
       <a href="<?php echo PUBLIC_ROOT ?>">
         <span class="flight"> Fly </span>  

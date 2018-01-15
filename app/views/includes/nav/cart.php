@@ -25,7 +25,7 @@
   </div>
 
   <footer class="dropdown-cart__footer">
-    <button class="dropdown-cart__checkout"> Checkout </button>
+    <a class="dropdown-cart__checkout" href="<?php echo PUBLIC_ROOT; ?>/checkout"> Checkout </a>
     <p class="dropdown-cart__total-text"> Total: </p>
     <p class="dropdown-cart__total-price"> £6,205 </p>
   </footer>

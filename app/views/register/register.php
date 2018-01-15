@@ -1,8 +1,8 @@
 <?php require APP_ROOT . '/views/includes/header.php'; ?>
 <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_ROOT; ?>/css/views/register/style.css">  
 
-<img class="cloud cloud-1" src="<?php echo PUBLIC_ROOT; ?>/img/icons/clouds.png">     
-<img class="cloud cloud-2" src="<?php echo PUBLIC_ROOT; ?>/img/icons/clouds.png">
+<img class="cloud cloud-1" src="<?php echo PUBLIC_ROOT; ?>/img/icons/clouds.svg">     
+<img class="cloud cloud-2" src="<?php echo PUBLIC_ROOT; ?>/img/icons/clouds.svg">
 
 <div class="form-wrapper">
   <form class="form" action="<?php echo PUBLIC_ROOT . '/users/register' ?>" method="POST">

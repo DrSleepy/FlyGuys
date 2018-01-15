@@ -11,9 +11,9 @@
         <p class="header__text"> Whether it's your first flight or simply your latest, we work to anticipate your every need </p>
       </div>
       <div class="header__images">
-        <img class="header__images-item cloud-1" src="<?php echo PUBLIC_ROOT; ?>/img/icons/clouds.png">     
-        <img class="header__images-item cloud-2" src="<?php echo PUBLIC_ROOT; ?>/img/icons/clouds.png">
-        <img class="header__images-item rocket" src="<?php echo PUBLIC_ROOT; ?>/img/icons/rocket.png">
+        <img class="header__images-item cloud-1" src="<?php echo PUBLIC_ROOT; ?>/img/icons/clouds.svg">     
+        <img class="header__images-item cloud-2" src="<?php echo PUBLIC_ROOT; ?>/img/icons/clouds.svg">
+        <img class="header__images-item rocket" src="<?php echo PUBLIC_ROOT; ?>/img/icons/rocket.svg">
       </div>
       <a class="header__button" href="<?php echo PUBLIC_ROOT . '/Flights' ?>"> View Flights </a>
     </header>
