@@ -26,13 +26,13 @@
           <div class="dropdown__flight-left">
             <i class="dropdown__flight-icon dropdown__flight-icon--outbound"></i>
             <p class="dropdown__flight-date"> 27/01/18 </p>
-            <p class="dropdown__flight-location"> London </p>
-            <p class="dropdown__flight-location"> Sudan </p>
+            <p class="dropdown__flight-location dropdown__flight-location--from"> London </p>
+            <p class="dropdown__flight-location dropdown__flight-location--to"> Sudan </p>
 
             <i class="dropdown__flight-icon dropdown__flight-icon--inbound"></i>
             <p class="dropdown__flight-date"> 17/02/18 </p>
-            <p class="dropdown__flight-location"> Sudan </p>
-            <p class="dropdown__flight-location"> London </p>      
+            <p class="dropdown__flight-location dropdown__flight-location--from"> Sudan </p>
+            <p class="dropdown__flight-location dropdown__flight-location--to"> London </p>      
           </div>
           <div class="dropdown__flight-right">
             <p class="dropdown__flight-price"> £604 </p>

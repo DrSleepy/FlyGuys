@@ -1,0 +1,144 @@
+@import (reference) '../../../css/framework/less/index/index.less';
+// Checkout Page styles
+.nav {
+  margin-bottom: 0;
+}
+
+.checkout-form {
+  background-color: white;
+}
+
+.form__header {
+  .pad-5;
+  border-bottom: solid 1px @block-border-color;
+}
+
+.form__title {
+  .secondary-font;
+  .peta;
+}
+
+.form__footer {
+  .pad-5;
+  .grid-row;
+}
+
+.form__submit-button {
+  .btn(@secondary-color);
+  .pad-tb-3;
+  .pad-lr-7;
+  width: max-content;
+  justify-self: center;
+}
+
+.sections-wrapper {
+  background-color: #fcfcfc;
+}
+
+.section {
+  .pad-tb-4;
+  .pad-lr-3;
+  border-bottom: solid 1px @block-border-color;
+}
+
+.section__header {
+  .grid-column;
+  .col-gap-3;
+  .push-down-4;
+  align-items: center;
+  grid-auto-columns: max-content;
+}
+.header__heading {
+  .tera;
+  .secondary-font;
+}
+
+.header__icon {
+  .grid-column;
+  .milli;
+  justify-content: center;
+  align-content: center;
+  height: 20px;
+  width: 20px;
+  color: white;
+  border-radius: 50%;
+  background-color: @secondary-color;
+
+  &--1:before {
+    content: '1';
+  }
+  &--2:before {
+    content: '2';
+  }
+}
+
+.section__row {
+  .grid-12;
+  .push-down-3;
+}
+
+.section__label {
+  .span-col-1-13;
+  .push-down-1;
+  .main-font-medium;
+}
+
+.section__input {
+  .span-col-1-13;
+
+  &--title {
+    .pad-3;
+    border-radius: 4px;
+    border: solid 1px @block-border-color;
+  }
+}
+
+// --------------------TABLET---------------------
+@media @tablet {
+  .section__input {
+    &--half {
+      .span-col-1-7;
+    }
+  }
+}
+
+// --------------------LAPTOP---------------------
+@media @laptop {
+  // Overwriting Body
+  body {
+    background-image: @purple-theme;
+  }
+  // Overwriting Nav
+  .nav {
+    background: none;
+    box-shadow: none;
+  }
+
+  // Checkout Page styles
+  .checkout-form {
+    border-radius: 5px;
+    .box-shadow-6;
+  }
+  .sections-wrapper {
+    .grid-row;
+    grid-template-columns: 1fr 1fr;
+  }
+  .section {
+    .pad-tb-4;
+    .pad-lr-5;
+  }
+  .section--last {
+    .span-col-1-3;
+    .grid-column;
+    .pad-lr-5;
+    .col-gap-8;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, max-content);
+  }
+
+  .section__input {
+    &--half {
+      .span-col-1-13;
+    }
+  }
+}

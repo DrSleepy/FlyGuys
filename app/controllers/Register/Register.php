@@ -1,5 +1,5 @@
 <?php
-class Users extends Controller
+class Register extends Controller
 {
   private $User;
 
@@ -11,13 +11,13 @@ class Users extends Controller
   // Default method - Will run if no method is called
   function index($name = ' ')
   {
-    // $this->User->findUserByEmail("yep");
-    $this->view('home/home', "ha");
+    $this->view('register/register', "ha");
   }
 
   function register()
   {
-    require APP_ROOT . '/controllers/Users/methods/register.php';
+    echo "lol";
+    require APP_ROOT . '/controllers/Register/methods/register.php';
 
     $HTTPMethod = $_SERVER['REQUEST_METHOD'];
     switch ($HTTPMethod) {
@@ -29,27 +29,9 @@ class Users extends Controller
 
       default:
         $data = registerGET(); // Initialises and returns default (empty) data
-        $this->view('users/register', $data); //Load view
+        $this->view('Register/Register', $data); //Load view
     }
   }
-
-  function login()
-  {
-    require APP_ROOT . '/controllers/Users/methods/login.php';
-
-    $HTTPMethod = $_SERVER['REQUEST_METHOD'];
-    switch ($HTTPMethod) {
-      case 'POST':
-        $data = loginPOST($_POST);
-        break;
-
-      default:
-        $data = loginGET();
-        $this->view('users/login', $data);
-    }
-  }
-
-
 }
 
 ?>

@@ -11,7 +11,7 @@ class Flights extends Controller
   // Default method - Will run if no method is called
   function index($name = ' ')
   {
-    $this->view('flights/flights', "default data passed here");
+    $this->view('Flights/Flights', "default data passed here");
   }
 
   function flights()
