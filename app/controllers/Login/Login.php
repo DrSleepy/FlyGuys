@@ -1,21 +1,17 @@
 <?php
-class Login extends Controller
-{
+class Login extends Controller {
   private $User;
 
-  function __construct()
-  {
-    $this->User = $this->model('User'); // Controller extention instantiates and returns new model 
+  function __construct() {
+    $this->User = $this->model('User'); // Controller inheritance instantiates and returns new model 
   }
 
   // Default method - Will run if no method is called
-  function index($name = ' ')
-  {
+  function index($name = ' ') {
     $this->view('login/login-page', "ha");
   }
 
-  function login()
-  {
+  function login() {
     require APP_ROOT . '/controllers/Login/methods/login.php';
 
     $HTTPMethod = $_SERVER['REQUEST_METHOD'];
@@ -29,7 +25,6 @@ class Login extends Controller
         $this->view('users/login', $data);
     }
   }
-
 
 }
 

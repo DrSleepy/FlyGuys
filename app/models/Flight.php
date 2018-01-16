@@ -1,12 +1,9 @@
 <?php
-class Flight
-{
+class Flight {
 
-  function loadFlight($xxx)
-  {
+  function loadFlight($xxx) {
     echo "xxx" . $xxx;
   }
-
 
 }
 

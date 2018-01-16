@@ -3,9 +3,9 @@
 
 // Database parameters
 define('DB_HOST', 'localhost');
-define('DB_USER', 'placeholder');
-define('DB_PASS', 'placeholder');
-define('DB_NAME', 'placeholder');
+define('DB_USER', 'root');
+define('DB_PASS', '123456');
+define('DB_NAME', 'flyguys');
 
 // App Root - Used when accessing App folder
 define('APP_ROOT', dirname(dirname(__FILE__))); // Sets APP_ROOT to /app folder

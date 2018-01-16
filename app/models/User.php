@@ -1,12 +1,15 @@
 <?php
-class User
-{
+class User {
 
-  function findUserByEmail($email)
-  {
-    echo "EMAIL" . $email;
+  private $db;
+
+  function __construct() {
+    $this->db = new Database;
   }
 
+  function findUserByEmail($email) {
+    echo "EMAIL" . $email;
+  }
 
 }
 

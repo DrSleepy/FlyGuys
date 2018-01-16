@@ -2,8 +2,7 @@
 // File responsibilities:
 // Handles all HTTP Methods (GET, POST, PUT etc) for 'register' function in controllers/Users/Users.php
 
-function registerPOST($POST)
-{
+function registerPOST($POST) {
   // Santaise POST data
   $POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
@@ -21,8 +20,7 @@ function registerPOST($POST)
   // Validation...
 }
 
-function registerGET()
-{
+function registerGET() {
   return $data = [
     'name' => '',
     'email' => '',

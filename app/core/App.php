@@ -2,17 +2,13 @@
 // Creates URL & Loads appropriate controller
 // URL FORMAT - /controller/method/params
 
-class App
-{
-
-  
+class App {
   // defaults
   protected $controller = "home";
   protected $method = "index";
   protected $params = [];
 
-  function __construct()
-  {
+  function __construct() {
     $url = $this->parseUrl(); // returns sanitized url
     $url = $this->controllerHandler($url); // sets and returns url excluding controller
     $url = $this->methodHandler($url); // sets and returns url parameters only
@@ -22,8 +18,7 @@ class App
     call_user_func_array([$this->controller, $this->method], $this->params);
   }
 
-  function parseUrl()
-  {
+  function parseUrl() {
     $urlIsSet = isset($_GET['url']);
     if (!$urlIsSet) {
       return;
@@ -37,8 +32,7 @@ class App
     return $splitUrl;
   }
 
-  function controllerHandler($url)
-  {
+  function controllerHandler($url) {
     $newUrl = $url;
     $passedController = $url[0];
     $controllerUrl = APP_ROOT . "/controllers/$passedController/$passedController.php";
@@ -54,8 +48,7 @@ class App
     return $newUrl; // returns url excluding controller (contains only method and parameters)
   }
 
-  function methodHandler($url)
-  {
+  function methodHandler($url) {
     $methodIsSet = isset($url[1]);
     if (!$methodIsSet) {
       return;
@@ -73,8 +66,7 @@ class App
     return $newUrl; // returns only parameters from url
   }
 
-  function paramsHandler($url)
-  {
+  function paramsHandler($url) {
     $this->params = !empty($url) ? array_values($url) : [];
   }
 }
