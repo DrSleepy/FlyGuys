@@ -2,7 +2,7 @@
 class Flight
 {
 
-  function xxx($xxx)
+  function loadFlight($xxx)
   {
     echo "xxx" . $xxx;
   }
