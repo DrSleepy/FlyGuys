@@ -1,14 +1,15 @@
 <?php
 class Flights extends Controller {
-  private $Flight;
+  private $flightModel;
 
   function __construct() {
-    $this->Flight = $this->model('Flight'); // Controller extention instantiates and returns new model 
+    $this->flightModel = $this->model('Flight'); // Controller extention instantiates and returns new model 
   }
 
   // Default method - Will run if no method is called
   function index($name = ' ') {
-    $this->view('flights/flights-page', $name);
+    $data = $this->flightModel->getAllFlights();
+    $this->view('flights/flights-page', $data);
   }
 
   function flights() {

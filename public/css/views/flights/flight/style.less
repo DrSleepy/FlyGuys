@@ -4,6 +4,7 @@
   border-top: solid 1px @block-border-color;
   background-color: white;
   border-bottom: none;
+  min-width: 100%;
 }
 
 .flight-header {
@@ -94,7 +95,7 @@
 .flight-right {
   .grid-column;
   .col-gap-10;
-  grid-template-columns: max-content max-content;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(3, max-content);
   color: @gray-text-color;
 
@@ -112,16 +113,13 @@
   .flights-list {
     .grid-row;
     .gap-5;
-    justify-content: center;
-    grid-template-columns: repeat(2, max-content);
+    grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: max-content;
   }
 
   .flight-wrapper {
-    // .box-shadow-1;
     border: solid 1px @block-border-color;
     border-radius: 4px;
-    width: max-content;
   }
 
   .flight-header {
@@ -130,7 +128,7 @@
   }
 
   .flight-bound {
-    .pad-lr-10;
+    .pad-lr-5;
   }
 
   .flight-left {
