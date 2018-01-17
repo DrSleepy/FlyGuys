@@ -10,19 +10,10 @@
   <a class="dropdown-nav__link"> Promotions </a>        
   <a class="dropdown-nav__link"> Wishlist </a>
 
-<<<<<<< HEAD
   <?php if (!isset($_SESSION['id'])) : ?>
   <a class="dropdown-nav__link" href="<?php echo PUBLIC_ROOT; ?>/Login"> Login </a>
   <a class="dropdown-nav__link" href="<?php echo PUBLIC_ROOT; ?>/Register"> Register </a>
   <?php else : ?>
   <a class="dropdown-nav__link" href="<?php echo PUBLIC_ROOT; ?>/Register"> Logout </a>
   <?php endif ?>    
-=======
-  <?php if (!isset($_SESSION['id'])) { ?>
-  <a class="dropdown-nav__link" href="<?php echo PUBLIC_ROOT; ?>/Login"> Login </a>
-  <a class="dropdown-nav__link" href="<?php echo PUBLIC_ROOT; ?>/Register"> Register </a>
-  <?php } else { ?>
-  <a class="dropdown-nav__link" href="<?php echo PUBLIC_ROOT; ?>/Login"> Logout </a>
-  <?php } ?>
->>>>>>> 3830f315ae8f6defcf7c696be72b8f4f1bb61315
 </nav>
