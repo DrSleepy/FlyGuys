@@ -16,8 +16,14 @@
       <a class="nav__links-item"> Promotions </a>      
       <a class="nav__links-item nav__links-item--last"> Wishlist </a>
       <button id="cart-button" class="nav__links-item nav__links-item--cart"> Cart </button>
+
+      <?php if(!isset($_SESSION['id'])) : ?>
       <a class="nav__links-item nav__links-item--login" href="<?php echo PUBLIC_ROOT; ?>/Login"> Login </a>
-      <a class="nav__links-item nav__links-item--register" href="<?php echo PUBLIC_ROOT; ?>/Register"> Register </a>      
+      <a class="nav__links-item nav__links-item--register" href="<?php echo PUBLIC_ROOT; ?>/Register"> Register </a>
+      <?php else : ?>
+      <a class="nav__links-item nav__links-item--logout" href="<?php echo PUBLIC_ROOT; ?>/Register"> Logout </a>
+      <?php endif ?>
+      
       <!-- Importing in cart dropdown. Absolutely positioned -->
       <?php include APP_ROOT . '/views/includes/nav/cart.php' ?>
       
