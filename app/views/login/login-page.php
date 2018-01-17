@@ -3,7 +3,7 @@
 
 <img class="cloud cloud-1" src="<?php echo PUBLIC_ROOT; ?>/img/icons/clouds.svg">     
 <img class="cloud cloud-2" src="<?php echo PUBLIC_ROOT; ?>/img/icons/clouds.svg">
-
+<?php print_r($data) ?>
 <div class="form-wrapper">
   <form class="form" action="<?php echo PUBLIC_ROOT . '/users/login' ?>" method="POST">
     <div class="form__top">

@@ -1,21 +1,18 @@
 <?php
-class Flights extends Controller
-{
-  private $Flight;
+class Flights extends Controller {
+  private $flightModel;
 
-  function __construct()
-  {
-    $this->Flight = $this->model('Flight'); // Controller extention instantiates and returns new model 
+  function __construct() {
+    $this->flightModel = $this->model('Flight'); // Controller extention instantiates and returns new model 
   }
 
   // Default method - Will run if no method is called
-  function index($name = ' ')
-  {
-    $this->view('flights/flights-page', $name);
+  function index($name = ' ') {
+    $data = $this->flightModel->getAllFlights();
+    $this->view('flights/flights-page', $data);
   }
 
-  function flights()
-  {
+  function flights() {
     require APP_ROOT . '/controllers/Flights/methods/flights.php';
 
     $HTTPMethod = $_SERVER['REQUEST_METHOD'];

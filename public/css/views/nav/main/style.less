@@ -69,15 +69,22 @@
     }
   }
 
+  &--login,
+  &--logout,
+  &--cart,
+  &--register{
+    .pad-tb-3;
+    .pad-lr-5;
+  }
+
   &--login {
     .btn(white);
-    .pad-tb-3;
-    .pad-lr-5;
     color: @black-text-color;
   }
+  &--logout {
+    .btn(@danger-color);
+  }
   &--register {
-    .pad-tb-3;
-    .pad-lr-5;
     color: white;
     border-radius: 4px;
     border: solid 2px white;

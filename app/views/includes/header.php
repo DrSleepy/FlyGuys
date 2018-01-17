@@ -10,6 +10,7 @@
 </head>
 <body>
 <?php 
+<<<<<<< HEAD
 
 require APP_ROOT . '/views/includes/nav/nav.php';
 
@@ -18,3 +19,13 @@ require APP_ROOT . '/views/includes/nav/nav.php';
 $_SESSION['id'] = "jimmy";
 
 ?>
+=======
+// SESSION LOGIN/LOGOUT TESTING
+// $_SESSION['id'] = NULL;
+$_SESSION['id'] = "jimmy";
+
+require APP_ROOT . '/views/includes/nav/nav.php';
+?>
+  
+  
+>>>>>>> 3830f315ae8f6defcf7c696be72b8f4f1bb61315

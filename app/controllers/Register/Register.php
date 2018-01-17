@@ -1,21 +1,17 @@
 <?php
-class Register extends Controller
-{
+class Register extends Controller {
   private $User;
 
-  function __construct()
-  {
+  function __construct() {
     $this->User = $this->model('User'); // Controller extention instantiates and returns new model 
   }
 
   // Default method - Will run if no method is called
-  function index($name = ' ')
-  {
+  function index($name = ' ') {
     $this->view('register/register-page', "ha");
   }
 
-  function register()
-  {
+  function register() {
     echo "lol";
     require APP_ROOT . '/controllers/Register/methods/register.php';
 
