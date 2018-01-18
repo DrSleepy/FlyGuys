@@ -7,7 +7,7 @@
       <a href="<?php echo PUBLIC_ROOT ?>">
         <span class="flight"> Fly </span>  
         <span class="guys"> Guys </span>
-      </a>                                                                                                                                                                                                                                          
+      </a>  
     </h1>
 
     <div class="nav__links"> <!-- right section of navigation -->
@@ -15,7 +15,7 @@
       <a class="nav__links-item" href="<?php echo PUBLIC_ROOT; ?>/Flights"> Flights </a>
       <a class="nav__links-item"> Promotions </a>      
       <a class="nav__links-item nav__links-item--last"> Wishlist </a>
-      <button id="cart-button" class="nav__links-item nav__links-item--cart"> Cart </button>
+      <button id="cart-button" class="nav__links-item nav__links-item--cart"> Cart(<?php echo count($_SESSION['cart']) ?>) </button>
 
       <?php if(!isset($_SESSION['id'])) : ?>
       <a class="nav__links-item nav__links-item--login" href="<?php echo PUBLIC_ROOT; ?>/Login"> Login </a>

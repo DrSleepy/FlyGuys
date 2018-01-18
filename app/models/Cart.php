@@ -3,7 +3,7 @@ class Cart {
   private $itemIds = []; //Array list of IDs
   private $items = []; //Array of full items (price, location, length etc)
 
-  function __construct($xxx) {
+  function __construct() {
     $this->load();
   }
 
@@ -11,8 +11,9 @@ class Cart {
     // fetch all items from database using $this->itemIds and load into $this->items
   }
   
-  function add($id) {
-    // fetch $id from database and add it to $this->items   
+  function add($item) {
+    // fetch $id from database and add it to $this->items
+    array_push($_SESSION['cart'], $item);
   }
 
   function remove($id) {

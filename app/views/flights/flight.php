@@ -1,12 +1,12 @@
 <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_ROOT; ?>/css/views/flights/flight/style.css">  
 
-<?php foreach ($data as $flight) { ?>
-<article class="flight-wrapper">
+<?php foreach ($data as $flight) : ?>
+<form class="flight-wrapper" action="<?php echo PUBLIC_ROOT; ?>/Flights/addToCart?add=<?php echo base64_encode(serialize($flight)) ?>" method="POST">
   <header class="flight-header">
     <img class="flight-header__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/airline_logo.svg">
     <h2 class="flight-header__airline"> <?php echo $flight['airline'] ?> </h2>
     <p class="flight-header__price"> £<?php echo $flight['price'] ?> </p>
-    <button class="flight-header__button"> Add to cart </button>
+    <button type="submit" class="flight-header__button"> Add to cart </button>
   </header>
 
   <div class="flight-bound">
@@ -44,5 +44,5 @@
       <p class="flight-right--to flight-right__airport"> Khartoum </p>
     </div>
   </div>
-</article>
-<?php } ?>
+</form>
+<?php endforeach ?>
