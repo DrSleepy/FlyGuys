@@ -52,7 +52,7 @@
 <script>
 // PROGRESS - dont delete
 const addFlightToCart = (event) => {
-  event.preventDefault(); // prevent page refresh
+  // event.preventDefault(); // prevent page refresh (only needed when using form element)
 
   const flightid = event.target.dataset.flightid // getting flight ID from selected button
 
@@ -67,7 +67,7 @@ const addFlightToCart = (event) => {
     body: formData
     };
 
-  // running the ajax call
+  // running the ajax call (runs php in 'url')
   fetch(url, init)
     .then(res => res.text()) // returns data back from php in promise
     .then(data => output.innerHTML = data) // data now retrieve and set as param
@@ -75,27 +75,8 @@ const addFlightToCart = (event) => {
 
 }
 
-const addButton = document.querySelector("#add");
-const output = document.querySelector("#output");
+const addButton = document.querySelector('#add');
+const output = document.querySelector('#output');
 
-addButton.addEventListener("click", addFlightToCart);
-
-
-// PROGRESS - dont delete
-// let form = document.querySelector("#formID");
-// let output = document.querySelector("#output");
-// let request = new XMLHttpRequest();
-
-    
-//     form.addEventListener("submit", (event) => {
-//       event.preventDefault();
-//       let formData = new FormData(form);
-      
-//       // request.open('post', '/Carts/addToCart');
-//       // request.send(formData);
-
-//       request.open("POST", "/Carts/addToCart");
-//       request.send(formData);
-      
-//     }, false);
+addButton.addEventListener('click', addFlightToCart);
 </script>

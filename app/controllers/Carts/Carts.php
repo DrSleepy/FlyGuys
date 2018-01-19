@@ -4,6 +4,7 @@ class Carts extends Controller {
   private $cartModel;
 
   function __construct() {
+    echo " cart constructor ";
     // $this->cartModel = $this->model('Cart');
   }
 
