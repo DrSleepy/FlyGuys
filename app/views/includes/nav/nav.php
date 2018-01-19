@@ -7,7 +7,7 @@
       <a href="<?php echo PUBLIC_ROOT ?>">
         <span class="flight"> Fly </span>  
         <span class="guys"> Guys </span>
-      </a>                                                                                                                                                                                                                                          
+      </a>  
     </h1>
 
     <div class="nav__links"> <!-- right section of navigation -->

@@ -6,7 +6,7 @@
     <img class="flight-header__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/airline_logo.svg">
     <h2 class="flight-header__airline"> <?php echo $flight['airline'] ?> </h2>
     <p class="flight-header__price"> £<?php echo $flight['price'] ?> </p>
-    <button class="flight-header__button"> Add to cart </button>
+    <button type="submit" class="flight-header__button"> Add to cart </button>
   </header>
 
   <div class="flight-bound">
