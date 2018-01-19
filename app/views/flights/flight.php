@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_ROOT; ?>/css/views/flights/flight/style.css">  
 
-<?php foreach ($data as $flight) { ?>
+<?php foreach ($data as $flight): ?>
 <article class="flight-wrapper">
   <header class="flight-header">
     <img class="flight-header__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/airline_logo.svg">
@@ -45,4 +45,30 @@
     </div>
   </div>
 </article>
-<?php } ?>
+<?php endforeach ?>
+
+
+<script>
+
+// PROGRESS - dont delete
+let form = document.querySelector(".flight-wrapper");
+    let output = document.querySelector("#output");
+    var formData = new FormData();
+    formData.append('username', 'Chriss');
+    
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+
+      fetch('/Carts/addToCart', {
+        method: "POST",
+        body: formData
+      }).then((res) => {
+          return res.text();
+        })
+        .then((data) => {
+          output.innerHTML = data;
+          console.log(data);
+        })
+    });
+</script>

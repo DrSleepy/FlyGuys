@@ -12,6 +12,12 @@ class Flight {
     $this->db->query($sql);
     return $this->db->multiResult();
   }
+
+  function singleFlight($id) {
+    $sql = "SELECT * FROM flights WHERE id = $id";
+    $this->db->query($sql);
+    return $this->db->singleResult();
+  }
 }
 
 ?>
