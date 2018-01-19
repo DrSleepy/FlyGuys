@@ -1,12 +1,13 @@
 <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_ROOT; ?>/css/views/flights/flight/style.css">  
 
+<div id="output"></div>
 <?php foreach ($data as $flight): ?>
-<article class="flight-wrapper">
+<article id="formID" class="flight-wrapper">
   <header class="flight-header">
-    <img class="flight-header__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/airline_logo.svg">
-    <h2 class="flight-header__airline"> <?php echo $flight['airline'] ?> </h2>
-    <p class="flight-header__price"> £<?php echo $flight['price'] ?> </p>
-    <button type="submit" class="flight-header__button"> Add to cart </button>
+    <img id="" name="a" class="flight-header__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/airline_logo.svg">
+    <h2 id="" name="b" class="flight-header__airline"> <?php echo $flight['airline'] ?> </h2>
+    <p name="c" class="flight-header__price"> £<?php echo $flight['price'] ?> </p>
+    <button id="add" class="flight-header__button" data-flightid="<?php echo $flight['id'] ?>"> Add to cart </button>
   </header>
 
   <div class="flight-bound">
@@ -49,26 +50,52 @@
 
 
 <script>
+// PROGRESS - dont delete
+const addFlightToCart = (event) => {
+  event.preventDefault(); // prevent page refresh
+
+  const flightid = event.target.dataset.flightid // getting flight ID from selected button
+
+  // data to be sent to php
+  const formData = new FormData();
+  formData.append("flightid", flightid);
+
+  // forming ajax properties
+  const url = '/Carts/addToCart';
+  const init = {
+    method: 'POST',
+    body: formData
+    };
+
+  // running the ajax call
+  fetch(url, init)
+    .then(res => res.text()) // returns data back from php in promise
+    .then(data => output.innerHTML = data) // data now retrieve and set as param
+    .catch(err => console.log(err));
+
+}
+
+const addButton = document.querySelector("#add");
+const output = document.querySelector("#output");
+
+addButton.addEventListener("click", addFlightToCart);
+
 
 // PROGRESS - dont delete
-let form = document.querySelector(".flight-wrapper");
-    let output = document.querySelector("#output");
-    var formData = new FormData();
-    formData.append('username', 'Chriss');
+// let form = document.querySelector("#formID");
+// let output = document.querySelector("#output");
+// let request = new XMLHttpRequest();
+
     
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
+//     form.addEventListener("submit", (event) => {
+//       event.preventDefault();
+//       let formData = new FormData(form);
+      
+//       // request.open('post', '/Carts/addToCart');
+//       // request.send(formData);
 
-
-      fetch('/Carts/addToCart', {
-        method: "POST",
-        body: formData
-      }).then((res) => {
-          return res.text();
-        })
-        .then((data) => {
-          output.innerHTML = data;
-          console.log(data);
-        })
-    });
+//       request.open("POST", "/Carts/addToCart");
+//       request.send(formData);
+      
+//     }, false);
 </script>
