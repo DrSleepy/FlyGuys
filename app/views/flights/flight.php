@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_ROOT; ?>/css/views/flights/flight/style.css">  
 
 <div id="output"></div>
-<?php foreach ($data as $flight): ?>
+<?php foreach ($data as $flight) : ?>
 <article id="formID" class="flight-wrapper">
   <header class="flight-header">
     <img id="" name="a" class="flight-header__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/airline_logo.svg">
@@ -49,34 +49,25 @@
 <?php endforeach ?>
 
 
-<script>
-// PROGRESS - dont delete
-const addFlightToCart = (event) => {
-  // event.preventDefault(); // prevent page refresh (only needed when using form element)
+<script type="module">
+import ajax from '../../../public/js/modules/ajax.js';
 
-  const flightid = event.target.dataset.flightid // getting flight ID from selected button
+const output = document.querySelector('#output');
+const addButton = document.querySelector('#add');
 
-  // data to be sent to php
-  const formData = new FormData();
-  formData.append("flightid", flightid);
-
-  // forming ajax properties
-  const url = '/Carts/addToCart';
-  const init = {
-    method: 'POST',
-    body: formData
-    };
-
-  // running the ajax call (runs php in 'url')
-  fetch(url, init)
-    .then(res => res.text()) // returns data back from php in promise
-    .then(data => output.innerHTML = data) // data now retrieve and set as param
-    .catch(err => console.log(err));
-
+const addFlightToCart = async (event) => {
+  const data = {
+    username: "attribute2",
+    email: "lol@hotmail.com",
+    naaa: "yeee",
+    mate: "matey boooi",
+    flightid: event.target.dataset.flightid
+    
+  }
+  const result = await ajax.post('/Carts/addToCart', data);
+  output.innerHTML = result;
 }
 
-const addButton = document.querySelector('#add');
-const output = document.querySelector('#output');
-
 addButton.addEventListener('click', addFlightToCart);
+
 </script>

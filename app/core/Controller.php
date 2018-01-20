@@ -1,16 +1,19 @@
 <?php
 // Base controller
 
-class Controller {
+class Controller
+{
 
   // Load model  
-  function model($model) {
+  function model($model)
+  {
     require_once APP_ROOT . "/models/$model.php";
     return new $model();
   }
 
   // Load view
-  function view($view, $data = []) {
+  function view($view, $data = [])
+  {
     require_once APP_ROOT . "/views/$view.php";
   }
 

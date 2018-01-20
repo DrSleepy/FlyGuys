@@ -1,35 +1,43 @@
 <?php
-class Cart {
+class Cart
+{
   private $itemIds = []; //Array list of IDs
   private $items = []; //Array of full items (price, location, length etc)
 
-  function __construct() {
+  function __construct()
+  {
     $this->load();
   }
 
-  function load() {
+  function load()
+  {
     // fetch all items from database using $this->itemIds and load into $this->items
   }
-  
-  function add($item) {
+
+  function add($item)
+  {
     // fetch $id from database and add it to $this->items   
     array_push($_SESSION['cart'], $item);
   }
 
-  function remove($id) {
+  function remove($id)
+  {
     // unset (remove) $id from $this->items       
   }
 
-  function numberOfItems() {
+  function numberOfItems()
+  {
     // count length of $this->items    
   }
-  
-  function allItems() {
+
+  function allItems()
+  {
     // return $this->items        
     return $_SESSION['cart'];
   }
-  
-  function totalCost() {
+
+  function totalCost()
+  {
     // loop through $this->items, adding ['price'] of item on each loop
   }
 }
