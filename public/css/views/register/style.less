@@ -60,14 +60,6 @@ body {
 
 .input-row {
   .push-down-2;
-
-  &--second {
-    .push-down-5;
-  }
-
-  &--last {
-    .push-down-9;
-  }
 }
 
 .input-row__label {
@@ -77,6 +69,19 @@ body {
 
 .input-row__input {
   width: 100%;
+}
+
+.error {
+  .push-down-3;
+  color: @danger-color;
+  justify-self: center;
+
+  &--second {
+    .push-down-5;
+  }
+  &--last {
+    .push-down-6;
+  }
 }
 
 .submit,

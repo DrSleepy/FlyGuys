@@ -24,7 +24,12 @@
 
       <span class="error"> Please enter your correct credentials! </span>
       <button class="submit" type="submit"> Login </button>
+
+      
+      <!-- Span =output here for testing purposes -->
       <span id="output"></span>
+
+
     </div>
   </form>
 
