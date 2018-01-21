@@ -12,11 +12,7 @@ export default {
       body: formData
     };
 
-    try {
-      const phpResponse = await fetch(url, request);
-      return phpResponse.text(); //Returns promise
-    } catch (err) {
-      console.log(err);
-    }
+    const response = await fetch(url, request);
+    return response.text(); // returns promise
   }
 };

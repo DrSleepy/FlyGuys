@@ -53,21 +53,19 @@
 import ajax from '../../../public/js/modules/ajax.js';
 
 const output = document.querySelector('#output');
-const addButton = document.querySelector('#add');
 
 const addFlightToCart = async (event) => {
   const data = {
-    username: "attribute2",
-    email: "lol@hotmail.com",
-    naaa: "yeee",
-    mate: "matey boooi",
     flightid: event.target.dataset.flightid
-    
   }
   const result = await ajax.post('/Carts/addToCart', data);
   output.innerHTML = result;
 }
 
-addButton.addEventListener('click', addFlightToCart);
+// Selecting all 'add to cart' buttons and adding event listeners
+const allAddButtons = document.querySelectorAll('#add');
+allAddButtons.forEach(current => {
+  current.addEventListener('click', addFlightToCart);
+});
 
 </script>
