@@ -54,15 +54,10 @@ body {
 
 .input-row {
   .input-wrapper;
+  .push-down-4;
   grid-template-columns: 70px 1fr;
-
-  .push-down-2;
-
-  &--first {
-    .push-down-5;
-  }
   &--last {
-    .push-down-9;
+    .push-down-5;
   }
 }
 
@@ -80,6 +75,12 @@ body {
 
 .input-row__input {
   .input-wrapper__input(left);
+}
+
+.error {
+  .push-down-6;
+  justify-self: center;
+  color: @danger-color;
 }
 
 .submit,
