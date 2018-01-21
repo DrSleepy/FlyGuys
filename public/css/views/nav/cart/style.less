@@ -15,7 +15,7 @@
 }
 
 .dropdown__all-flights {
-  max-height: 300px;
+  max-height: 310px;
   overflow: hidden;
   overflow-y: scroll;
 }
@@ -103,6 +103,25 @@
 }
 
 .dropdown-cart__total-price {
+  .main-font-medium;
+}
+
+.empty-wrapper {
+  .grid-row;
+  .pad-tb-5;
+  justify-items: center;
+  color: @disabled-color;
+}
+.empty__icon,
+.empty__text {
+  margin-left: 15px;
+}
+.empty__icon:before {
+  .icon-font;
+  .exa;
+  content: '\f370';
+}
+.empty__text {
   .main-font-medium;
 }
 

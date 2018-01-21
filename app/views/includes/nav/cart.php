@@ -6,6 +6,14 @@
   </header>
 
   <div class="dropdown__all-flights">
+
+    <?php if (count($_SESSION['cart']) < 1) : ?> 
+    <div class="empty-wrapper">
+      <i class="empty__icon"></i>
+      <p class="empty__text">Empty Cart</p>
+    </div>
+    <?php else : ?>  
+
     <?php foreach ($_SESSION['cart'] as $item) : ?>  
     <div class="dropdown__flight-wrapper">
       <div class="dropdown__flight-left">
@@ -25,6 +33,8 @@
       </div>
     </div>
     <?php endforeach ?>
+    <?php endif ?>      
+
   </div>
 
   <footer class="dropdown-cart__footer">
