@@ -57,9 +57,9 @@ class Flights extends Controller
 
   function addToCart()
   {
-    $item = unserialize(base64_decode($_GET['add']));
-    $this->cartModel->add($item);
-    $this->view('flights/flights-page', $this->allFlights);
+    // $item = unserialize(base64_decode($_GET['add']));
+    // $this->cartModel->add($item);
+    // $this->view('flights/flights-page', $this->allFlights);
   }
 
 }

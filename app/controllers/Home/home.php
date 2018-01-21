@@ -2,9 +2,9 @@
 class Home extends Controller
 {
 
-  function index($name = '')
+  function index()
   {
-    $this->view('home/home-page', "data");
+    $this->view('home/home-page', '');
   }
 
 }

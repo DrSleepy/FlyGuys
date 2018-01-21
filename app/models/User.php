@@ -9,10 +9,6 @@ class User
     $this->db = new Database;
   }
 
-  // function findUserByEmail($email) {
-  //   echo "EMAIL" . $email;
-  // }
-
   function getUsers()
   {
     $sql = "SELECT * FROM users";

@@ -5,14 +5,12 @@ class Login extends Controller
 
   function __construct()
   {
-    $this->userModel = $this->model('User'); // Controller inheritance instantiates and returns new model 
+    $this->userModel = $this->model('User');
   }
 
-  // Default method - Will run if no method is called
-  function index($name = ' ')
+  function index()
   {
-    $x = '';
-    $this->view('login/login-page', $x);
+    $this->view('login/login-page', '');
   }
 
   function login()

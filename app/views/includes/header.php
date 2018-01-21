@@ -10,11 +10,9 @@
 </head>
 <body>
 <?php 
-
 require APP_ROOT . '/views/includes/nav/nav.php';
 
 // Login test
 // $_SESSION['id'] = NULL;
 $_SESSION['id'] = "jimmy";
-
 ?>

@@ -50,15 +50,17 @@
 
 
 <script type="module">
-import ajax from '../../../public/js/modules/ajax.js';
-
-const output = document.querySelector('#output');
+import ajax from '/public/js/modules/ajax.js';
 
 const addFlightToCart = async (event) => {
+  event.preventDefault();
+  
   const data = {
     flightid: event.target.dataset.flightid
   }
   const result = await ajax.post('/Carts/addToCart', data);
+
+  const output = document.querySelector('#output');
   output.innerHTML = result;
 }
 
@@ -67,5 +69,4 @@ const allAddButtons = document.querySelectorAll('#add');
 allAddButtons.forEach(current => {
   current.addEventListener('click', addFlightToCart);
 });
-
 </script>

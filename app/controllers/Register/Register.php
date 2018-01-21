@@ -9,9 +9,9 @@ class Register extends Controller
   }
 
   // Default method - Will run if no method is called
-  function index($name = ' ')
+  function index()
   {
-    $this->view('register/register-page', "data");
+    $this->view('register/register-page', '');
   }
 
   function register()
