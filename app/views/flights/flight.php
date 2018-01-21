@@ -50,23 +50,23 @@
 
 
 <script type="module">
-import ajax from '/public/js/modules/ajax.js';
+// import ajax from '/public/js/modules/ajax.js';
 
-const addFlightToCart = async (event) => {
-  event.preventDefault();
+// const addFlightToCart = async (event) => {
+//   event.preventDefault();
   
-  const data = {
-    flightid: event.target.dataset.flightid
-  }
-  const result = await ajax.post('/Carts/addToCart', data);
+//   const data = {
+//     flightid: event.target.dataset.flightid
+//   }
+//   const result = await ajax.post('/Carts/addToCart', data);
 
-  const output = document.querySelector('#output');
-  output.innerHTML = result;
-}
+//   const output = document.querySelector('#output');
+//   output.innerHTML = result;
+// }
 
-// Selecting all 'add to cart' buttons and adding event listeners
-const allAddButtons = document.querySelectorAll('#add');
-allAddButtons.forEach(current => {
-  current.addEventListener('click', addFlightToCart);
-});
+// // Selecting all 'add to cart' buttons and adding event listeners
+// const allAddButtons = document.querySelectorAll('#add');
+// allAddButtons.forEach(current => {
+//   current.addEventListener('click', addFlightToCart);
+// });
 </script>

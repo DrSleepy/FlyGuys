@@ -3,9 +3,9 @@
 
 <img class="cloud cloud-1" src="<?php echo PUBLIC_ROOT; ?>/img/icons/clouds.svg">     
 <img class="cloud cloud-2" src="<?php echo PUBLIC_ROOT; ?>/img/icons/clouds.svg">
-<?php print_r($data) ?>
+
 <div class="form-wrapper">
-  <form id="login-form" class="form" action="<?php echo PUBLIC_ROOT . '/users/login' ?>" method="POST">
+  <form id="login-form" class="form">
     <div class="form__top">
       <h1 class="heading"> Login </h1>
       <p class="help"> Please fill in your credentials to login </p>
@@ -19,16 +19,11 @@
       
       <div class="input-row input-row--last">
         <label class="input-row__label input-row__label--last" for="password"></label>
-        <input id="password" class="input-row__input" name="password" type="password" placeholder="Password" required>
+        <input id="password" class="input-row__input" name="password" type="password" placeholder="Password">
       </div>
 
-      <span class="error"> Please enter your correct credentials! </span>
+      <span id="error" class="error"></span>
       <button class="submit" type="submit"> Login </button>
-
-      
-      <!-- Span =output here for testing purposes -->
-      <span id="output"></span>
-
 
     </div>
   </form>
@@ -39,19 +34,25 @@
 
 
 <script type="module">
-import ajax from '/public/js/modules/ajax.js';
 
-const addFlightToCart = async (event) => {
+const submit = async (event) => {
   event.preventDefault();
-  
   const formInfo = new FormData(form);
-  const result = await ajax.post('/Carts/addToCart', formInfo);
-  
-  const output = document.querySelector('#output');
-  output.innerHTML = result;
+
+  // Ajax call
+  const init = {
+    method: 'POST',
+    body: formInfo
+  }
+  const response = await fetch('/Login/loginValidation', init)
+  const textResponse = await response.text();
+  const feedback = JSON.parse(textResponse);
+
+  const errorEl = document.querySelector('#error');
+  errorEl.innerHTML = feedback.error;
 }
 
 // Selecting all 'add to cart' buttons and adding event listeners
 const form = document.querySelector('#login-form');
-form.addEventListener('submit', addFlightToCart);
+form.addEventListener('submit', submit);
 </script>
