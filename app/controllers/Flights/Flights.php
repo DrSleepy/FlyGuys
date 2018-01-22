@@ -5,6 +5,7 @@ class Flights extends Controller
   private $cartModel;
   private $allFlights;
 
+
   function __construct()
   {
     $this->flightModel = $this->model('Flight');

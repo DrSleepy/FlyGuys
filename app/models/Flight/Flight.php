@@ -1,7 +1,6 @@
 <?php
 class Flight
 {
-
   private $db;
 
   function __construct()
@@ -23,5 +22,4 @@ class Flight
     return $this->db->singleResult();
   }
 }
-
 ?>

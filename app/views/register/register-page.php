@@ -34,7 +34,7 @@
         <label class="input-row__label" for="input_password_confirm"> Password: </label>
         <input id="input_password_confirm" class="input-row__input" name="password_confirm" type="password" placeholder="confirm" required>
       </div>
-      <label id="password_confirm" class="error error--last" for="input_password_confirm">  </label>
+      <label id="password_confirm" class="error error--last" for="input_password_confirm"> </label>
 
       <button class="submit" type="submit"> Register </button>
     </div>

@@ -1,6 +1,21 @@
 <?php
-class User
+class UserService
 {
+
+  function loginUser()
+  {
+    // log user in
+    echo "user serviceeee";
+  }
+
+  function logoutUser()
+  {
+    // log user out
+  }
+
+
+
+
 
   function loginRules()
   {

@@ -6,7 +6,7 @@ class Controller
   // Load model  
   function model($model)
   {
-    require_once APP_ROOT . "/models/$model.php";
+    require_once APP_ROOT . "/models/$model/$model.php";
     return new $model();
   }
 

@@ -8,7 +8,7 @@ export default (id, element) => {
       ? (toToggle.style.display = 'none')
       : (toToggle.style.display = 'inline');
   } else {
-    // if click is not on id or element nodes, hide element node
+    // if click is not on id or child nodes, hide element node
     if (
       !toggler === event.target ||
       !toToggle === event.target ||
