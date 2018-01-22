@@ -2,7 +2,6 @@
 class Validation
 {
 
-
   function validate($values, $rules)
   {
     // values format: assoc array
@@ -20,28 +19,40 @@ class Validation
       foreach ($splitFullRule as $singleRule) {
         $splitSingleRule = explode(":", $singleRule);// make numbered array by splitting single rule at ":"
 
-        switch ($splitSingleRule[0]) {
+        $key = $values[$keyName];
+        $ruleName = $splitSingleRule[0]; // will be 'min' from min:3
+        if (count($splitSingleRule) > 1) {
+          $ruleOption = $splitSingleRule[1]; // will be '3' from min:3
+        }
+
+        switch ($ruleName) {
           case 'required':
-            if (!isset($values[$keyName]) || empty($values[$keyName]) || strlen($values[$keyName]) === 0) {
+            if (!isset($key) || empty($key) || strlen($key) === 0) {
               $errors[$keyName][] = "$keyName is required"; // appends new element to $errors array
             }
             break;
 
           case 'email':
-            if (!filter_var($values[$keyName], FILTER_VALIDATE_EMAIL)) {
-              $errors[$keyName][] = "$keyName must be an email"; // appends new element to $errors array
+            if (!filter_var($key, FILTER_VALIDATE_EMAIL)) {
+              $errors[$keyName][] = "$keyName must be in email format";
             }
             break;
 
           case 'min':
-            if (strlen($values[$keyName]) < $splitSingleRule[1]) {
-              $errors[$keyName][] = "$keyName must be at least $splitSingleRule[1] characters"; // appends new element to $errors array
+            if (strlen($key) < $ruleOption) {
+              $errors[$keyName][] = "$keyName must be at least $ruleOption characters";
             }
             break;
 
           case 'max':
-            if (strlen($values[$keyName]) > $splitSingleRule[1]) {
-              $errors[$keyName][] = "$keyName must be less than $splitSingleRule[1] characters"; // appends new element to $errors array
+            if (strlen($key) > $ruleOption) {
+              $errors[$keyName][] = "$keyName must be less than $ruleOption characters";
+            }
+            break;
+
+          case 'matches':
+            if ($key !== $values[$ruleOption]) {
+              $errors[$keyName][] = "$ruleOption does not match";
             }
             break;
         }

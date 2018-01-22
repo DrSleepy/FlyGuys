@@ -41,9 +41,8 @@ const validateForm = async (formInfo) => {
     method: 'POST',
     body: formInfo
   }
-  const response = await fetch('/Login/logUserIn', init)
+  const response = await fetch('/Login/loginUser', init)
   const textResponse = await response.text();
-  console.log(textResponse);
   return JSON.parse(textResponse);
 }
 
@@ -58,8 +57,8 @@ const submit = async (event) => {
   const errorEl = document.querySelector('#error');
 
   !formIsValid 
-  ? error.innerHTML = "Incorrect credentials"
-  : error.innerHTML = '';    
+  ? errorEl.innerHTML = "Incorrect credentials"
+  : errorEl.innerHTML = '';    
 
 }
 

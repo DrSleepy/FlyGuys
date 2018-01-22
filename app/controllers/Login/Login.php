@@ -15,7 +15,7 @@ class Login extends Controller
     $this->view('login/login-page', '');
   }
 
-  function logUserIn()
+  function loginUser()
   {
     $rules = $this->userModel->loginRules(); // returns rules for login form
     $result = $this->validationModel->validate($_POST, $rules); // validates form and returns result as array

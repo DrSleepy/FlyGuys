@@ -4,11 +4,20 @@ class User
 
   function loginRules()
   {
-    $rules = $rules = [
+    return $rules = [
       "email" => "required|email",
-      "password" => "required|min:3|max:11"
+      "password" => "required"
     ];
-    return $rules;
+  }
+
+  function registerRules()
+  {
+    return $rules = [
+      "email" => "required|email",
+      "email_confirm" => "matches:email",
+      "password" => "required|min:8|max:30",
+      "password_confirm" => "matches:password"
+    ];
   }
 
 }

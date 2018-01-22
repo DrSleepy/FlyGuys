@@ -14,32 +14,32 @@
     <div class="form__bottom">
       <div class="input-row">
         <label class="input-row__label" for="email"> Email: </label>
-        <input id="email" class="input-row__input" name="email" type="email" required>
+        <input id="email" class="input-row__input" name="email" type="email" >
       </div>
-      <span class="error"> Please enter your correct credentials! </span>
+      <span id="error-email" class="error"> </span>
 
       <div class="input-row">
         <label class="input-row__label" for="email_confirm"> Email: </label>
-        <input id="email_confirm" class="input-row__input" name="email_confirm" type="email" placeholder="confirm" required>
+        <input id="email_confirm" class="input-row__input" name="email_confirm" type="email" placeholder="confirm" >
       </div>
-      <span class="error error--second"> Please enter your correct credentials! </span>
+      <span id="error-email-confirm" class="error error--second"> </span>
   
       <div class="input-row">
         <label class="input-row__label" for="password"> Password: </label>
-        <input id="password" class="input-row__input" name="password" type="password" required>
+        <input id="password" class="input-row__input" name="password" type="password" >
       </div>
-      <span class="error"> Please enter your correct credentials! </span>
+      <span id="error-password" class="error">  </span>
 
       <div class="input-row">
         <label class="input-row__label" for="password_confirm"> Password: </label>
-        <input id="password_confirm" class="input-row__input" name="password_confirm" type="password" placeholder="confirm" required>
+        <input id="password_confirm" class="input-row__input" name="password_confirm" type="password" placeholder="confirm" >
       </div>
-      <span class="error error--last"> Please enter your correct credentials! </span>
+      <span id="error-password-confirm" class="error error--last">  </span>
 
       <button class="submit" type="submit"> Register </button>
 
       <!-- Span =output here for testing purposes -->
-      <span id="output"></span>
+      <span id="error"></span>
 
 
     </div>
@@ -51,19 +51,37 @@
 
 
 <script type="module">
-import ajax from '/public/js/modules/ajax.js';
 
-const addFlightToCart = async (event) => {
+const validateForm = async (formInfo) => {
+  // Ajax call
+  const init = {
+    method: 'POST',
+    body: formInfo
+  }
+  const response = await fetch('/Register/registerUser', init)
+  const textResponse = await response.text();
+  return JSON.parse(textResponse);
+}
+
+
+const submit = async (event) => {
   event.preventDefault();
-  
+
   const formInfo = new FormData(form);
-  const result = await ajax.post('/Carts/addToCart', formInfo);
+  const response = await validateForm(formInfo);
+  const formIsValid = response[0];
+
+  console.log(response);
   
-  const output = document.querySelector('#output');
-  output.innerHTML = result;
+  const errorEl = document.querySelector('#error');
+
+  !formIsValid 
+  ? errorEl.innerHTML = "Incorrect credentials"
+  : errorEl.innerHTML = '';    
+
 }
 
 // Selecting all 'add to cart' buttons and adding event listeners
 const form = document.querySelector('#register-form');
-form.addEventListener('submit', addFlightToCart);
+form.addEventListener('submit', submit);
 </script>

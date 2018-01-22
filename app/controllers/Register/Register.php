@@ -1,64 +1,27 @@
 <?php
 class Register extends Controller
 {
-  private $User;
+  private $userModel;
+  private $validationModel;
 
   function __construct()
   {
-    $this->User = $this->model('User'); // Controller extention instantiates and returns new model 
+    $this->userModel = $this->model('User');
+    $this->validationModel = $this->model('Validation');
   }
 
-  // Default method - Will run if no method is called
   function index()
   {
     $this->view('register/register-page', '');
   }
 
-  function register()
+  function registerUser()
   {
-    $HTTPMethod = $_SERVER['REQUEST_METHOD'];
-    switch ($HTTPMethod) {
-      case 'POST': 
-        // Run POST method here
-        break;
-
-      default:
-        $this->view('Register/Register', "data");
-    }
+    $rules = $this->userModel->registerRules(); // returns rules for register form
+    $result = $this->validationModel->validate($_POST, $rules); // validates form and returns result as array
+    echo json_encode($result);
   }
 
-  function registerPOST($POST)
-  {
-  // Santaise POST data
-    $POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-
-    $data = [
-      'name' => trim($POST['name']),
-      'email' => trim($POST['email']),
-      'password' => trim($POST['password']),
-      'password_confirm' => trim($POST['password_confirm']),
-      'name_err' => '',
-      'email_err' => '',
-      'password_err' => '',
-      'password_confirm_err' => ''
-    ];
-
-  // Validation...
-  }
-
-  function registerGET()
-  {
-    return $data = [
-      'name' => '',
-      'email' => '',
-      'password' => '',
-      'password_confirm' => '',
-      'name_err' => '',
-      'email_err' => '',
-      'password_err' => '',
-      'password_confirm_err' => ''
-    ];
-  }
 }
 
 ?>
