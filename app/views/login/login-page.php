@@ -14,7 +14,7 @@
     <div class="form__bottom">
       <div class="input-row">
         <label class="input-row__label input-row__label--first" for="email"></label>
-        <input id="email" class="input-row__input" name="email" type="email" placeholder="Email" required>
+        <input id="email" class="input-row__input" name="email" type="" placeholder="Email">
       </div>
       
       <div class="input-row input-row--last">
@@ -41,34 +41,25 @@ const validateForm = async (formInfo) => {
     method: 'POST',
     body: formInfo
   }
-  const response = await fetch('/Login/loginValidation', init)
+  const response = await fetch('/Login/logUserIn', init)
   const textResponse = await response.text();
+  console.log(textResponse);
   return JSON.parse(textResponse);
 }
 
-const saveUserToSession = () => {
-
-}
 
 const submit = async (event) => {
   event.preventDefault();
 
   const formInfo = new FormData(form);
-  const response = await validateForm(formInfo); // returns object containing any errors
-  const success = response.success;
-  const error = response.error;
+  const response = await validateForm(formInfo);
+  const formIsValid = response[0];
+  
+  const errorEl = document.querySelector('#error');
 
-    console.log(response);
-  
-
-  // const errorEl = document.querySelector('#error');
-  
-  // if (success){
-  //   console.log(error);
-  // } else if (error){
-  //   console.log(error);
-  // }
-  
+  !formIsValid 
+  ? error.innerHTML = "Incorrect credentials"
+  : error.innerHTML = '';    
 
 }
 
