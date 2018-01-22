@@ -2,7 +2,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_ROOT; ?>/css/views/checkout/style.css">  
 
 <div class="wrapper">
-  <form action="" class="checkout-form">
+  <form id="checkout-form" class="checkout-form">
     <header class="form__header">
       <h1 class="form__title"> Checkout </h1>
     </header>
@@ -24,13 +24,15 @@
         </div>
 
         <div class="section__row">
-          <label class="section__label" for=""> First name </label>
-          <input class="section__input" type="text">
+          <label class="section__label" for="input_first_name"> First name </label>
+          <input id="input_first_name" class="section__input" name="first_name" type="text" required>
+          <label id="first_name" class="error" for="input_first_name"> </label>
         </div>
 
         <div class="section__row">
-          <label class="section__label" for=""> Last name </label>
-          <input class="section__input" type="text">
+          <label class="section__label" for="input_last_name"> Last name </label>
+          <input id="input_last_name" class="section__input" name="last_name" type="text" required>
+          <label id="last_name" class="error" for="input_last_name"> </label>
         </div>
       </section>
 
@@ -41,18 +43,21 @@
         </header>
 
         <div class="section__row">
-          <label class="section__label" for=""> Email </label>
-          <input class="section__input" type="text">
+          <label class="section__label" for="input_email"> Email </label>
+          <input id="input_email" class="section__input" name="email" type="email" required>
+          <label id="email" class="error" for="input_email"> </label>
         </div>
 
         <div class="section__row">
-          <label class="section__label" for=""> Home Number </label>
-          <input class="section__input section__input--half" type="text">
+          <label class="section__label" for="input_home_number"> Home Number </label>
+          <input id="input_home_number" class="section__input section__input--half" name="home_number" type="tel" required>
+          <label id="home_number" class="error" for="input_home_number"> </label>
         </div>
 
         <div class="section__row">
-          <label class="section__label" for=""> Mobile Number </label>
-          <input class="section__input section__input--half" type="text">
+          <label class="section__label" for="input_mobile_number"> Mobile Number </label>
+          <input id="input_mobile_number" class="section__input section__input--half" name="mobile_number" type="tel" required>
+          <label id="mobile_number" class="error" for="input_mobile_number"> </label>
         </div>
       </section>
 
@@ -63,28 +68,33 @@
         </header>
 
         <div class="section__row">
-          <label class="section__label" for=""> Address </label>
-          <input class="section__input" type="text">
+          <label class="section__label" for="input_address"> Address </label>
+          <input id="input_address" class="section__input" name="address" type="text" required>
+          <label id="address" class="error" for="input_address"> </label>          
         </div>
 
         <div class="section__row">
-          <label class="section__label" for=""> Address continued (optional) </label>
-          <input class="section__input" type="text">
+          <label class="section__label" for="input_address_optional"> Address continued (optional) </label>
+          <input id="input_address_optional" class="section__input" name="address_optional" type="text">
+          <label id="address_optional" class="error" for="input_address_optional"> </label> 
         </div>
 
         <div class="section__row">
-          <label class="section__label" for=""> Town/City </label>
-          <input class="section__input" type="text">
+          <label class="section__label" for="input_town_city"> Town/City </label>
+          <input id="input_town_city" class="section__input" name="town_city" type="text" required>
+          <label id="town_city" class="error" for="input_town_city"> </label>
         </div>
 
         <div class="section__row">
-          <label class="section__label" for=""> Postcode </label>
-          <input class="section__input section__input--half" type="text">
+          <label class="section__label" for="input_postcode"> Postcode </label>
+          <input id="input_postcode" class="section__input section__input--half" name="postcode" type="text" required>
+          <label id="postcode" class="error" for="input_postcode"> </label>          
         </div>
 
         <div class="section__row">
-          <label class="section__label" for=""> Country </label>
-          <input class="section__input" type="text">
+          <label class="section__label" for="input_country"> Country </label>
+          <input id="input_country" class="section__input" name="country" type="text" required>
+          <label id="country" class="error" for="input_country"> </label>                    
         </div>
       </section>
     </div>
@@ -95,3 +105,35 @@
 </div>
 
 <?php require APP_ROOT . '/views/includes/footer.php'; ?>
+
+<script type="module">
+import validateForm from '/public/js/modules/validateForm.js';
+import appendErrors from '/public/js/modules/appendErrors.js';
+
+const formErrors = (data) => {
+  const errors = data[1];
+  const errorElements = [
+    '#first_name',
+    '#last_name',
+    '#email',
+    '#home_number',
+    '#mobile_number',
+    '#address',
+    '#town_city',
+    '#postcode',
+    '#country'                                                                          
+  ];
+  appendErrors(errors, errorElements);
+}
+
+const submit = async (event) => {
+  event.preventDefault();
+  const formInfo = new FormData(form);
+  const response = await validateForm('/Checkout/checkoutUser', formInfo);
+  formErrors(response);
+}
+
+// Selecting all 'add to cart' buttons and adding event listeners
+const form = document.querySelector('#checkout-form');
+form.addEventListener('submit', submit);
+</script>

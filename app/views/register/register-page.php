@@ -16,25 +16,25 @@
         <label class="input-row__label" for="input_email"> Email: </label>
         <input id="input_email" class="input-row__input" name="email" type="email" required>
       </div>
-      <span id="email" class="error"> </span>
+      <label id="email" class="error" for="input_email"> </label>
 
       <div class="input-row">
         <label class="input-row__label" for="input_email_confirm"> Email: </label>
         <input id="input_email_confirm" class="input-row__input" name="email_confirm" type="email" placeholder="confirm" required>
       </div>
-      <span id="email_confirm" class="error error--second"> </span>
+      <label id="email_confirm" class="error error--second" for="input_email_confirm"> </label>
   
       <div class="input-row">
         <label class="input-row__label" for="input_password"> Password: </label>
         <input id="input_password" class="input-row__input" name="password" type="password" required>
       </div>
-      <span id="password" class="error">  </span>
+      <label id="password" class="error" for="input_password">  </label>
 
       <div class="input-row">
         <label class="input-row__label" for="input_password_confirm"> Password: </label>
         <input id="input_password_confirm" class="input-row__input" name="password_confirm" type="password" placeholder="confirm" required>
       </div>
-      <span id="password_confirm" class="error error--lastt">  </span>
+      <label id="password_confirm" class="error error--last" for="input_password_confirm">  </label>
 
       <button class="submit" type="submit"> Register </button>
     </div>
@@ -48,7 +48,6 @@
 <script type="module">
 import validateForm from '/public/js/modules/validateForm.js';
 import appendErrors from '/public/js/modules/appendErrors.js';
-
 
 const formErrors = (data) => {
   const errors = data[1];
@@ -71,5 +70,4 @@ const submit = async (event) => {
 // Selecting all 'add to cart' buttons and adding event listeners
 const form = document.querySelector('#register-form');
 form.addEventListener('submit', submit);
-
 </script>

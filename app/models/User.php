@@ -20,6 +20,21 @@ class User
     ];
   }
 
+  function checkoutRules()
+  {
+    return $rules = [
+      "first_name" => "required|alphabetical",
+      "last_name" => "required|alphabetical",
+      "email" => "required|email",
+      "home_number" => "required|numerical|telephone",
+      "mobile_number" => "required|numerical|telephone",
+      "address" => "required",
+      "town_city" => "required|alphabetical",
+      "postcode" => "required|postcode",
+      "country" => "required|alphabetical"
+    ];
+  }
+
 }
 
 ?>

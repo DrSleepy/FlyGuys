@@ -1,7 +1,6 @@
 <?php
 class Validation
 {
-
   private $values; // format: assoc array
   private $rules; // $rules format: [ "name" => "required|min:3|max:3"]
   private $errors = [];
@@ -90,6 +89,31 @@ class Validation
       case 'matches':
         if ($this->ruleValue !== $this->values[$this->subRuleOption]) {
           $this->errors[$this->ruleName][] = "$this->subRuleOption does not match";
+        }
+        break;
+
+      case 'alphabetical':
+        if (!preg_match("/^[a-zA-Z]+$/", $this->ruleValue)) {
+          $this->errors[$this->ruleName][] = "alphabetical characters only";
+        }
+        break;
+
+      case 'numerical':
+        if (!preg_match("/^[0-9]+$/", $this->ruleValue)) {
+          $this->errors[$this->ruleName][] = "numerical characters only";
+        }
+        break;
+
+      case 'postcode':
+        $postcodePattern = '/^([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([AZa-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9]?[A-Za-z]))))[0-9][A-Za-z]{2})$/';
+        if (!preg_match($postcodePattern, str_replace(' ', '', $this->ruleValue))) {
+          $this->errors[$this->ruleName][] = "invalid postcode";
+        }
+        break;
+
+      case 'telephone':
+        if (strlen($this->ruleValue) !== 11) {
+          $this->errors[$this->ruleName][] = "invalid number";
         }
         break;
     }
