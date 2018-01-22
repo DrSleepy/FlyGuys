@@ -35,10 +35,7 @@
 
 <script type="module">
 
-const submit = async (event) => {
-  event.preventDefault();
-  const formInfo = new FormData(form);
-
+const validateForm = async (formInfo) => {
   // Ajax call
   const init = {
     method: 'POST',
@@ -46,10 +43,33 @@ const submit = async (event) => {
   }
   const response = await fetch('/Login/loginValidation', init)
   const textResponse = await response.text();
-  const feedback = JSON.parse(textResponse);
+  return JSON.parse(textResponse);
+}
 
-  const errorEl = document.querySelector('#error');
-  errorEl.innerHTML = feedback.error;
+const saveUserToSession = () => {
+
+}
+
+const submit = async (event) => {
+  event.preventDefault();
+
+  const formInfo = new FormData(form);
+  const response = await validateForm(formInfo); // returns object containing any errors
+  const success = response.success;
+  const error = response.error;
+
+    console.log(response);
+  
+
+  // const errorEl = document.querySelector('#error');
+  
+  // if (success){
+  //   console.log(error);
+  // } else if (error){
+  //   console.log(error);
+  // }
+  
+
 }
 
 // Selecting all 'add to cart' buttons and adding event listeners
