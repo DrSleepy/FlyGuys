@@ -14,35 +14,29 @@
     <div class="form__bottom">
       <div class="input-row">
         <label class="input-row__label" for="input_email"> Email: </label>
-        <input id="input_email" class="input-row__input" name="email" type="email" >
+        <input id="input_email" class="input-row__input" name="email" type="email" required>
       </div>
       <span id="email" class="error"> </span>
 
       <div class="input-row">
         <label class="input-row__label" for="input_email_confirm"> Email: </label>
-        <input id="input_email_confirm" class="input-row__input" name="email_confirm" type="email" placeholder="confirm" >
+        <input id="input_email_confirm" class="input-row__input" name="email_confirm" type="email" placeholder="confirm" required>
       </div>
       <span id="email_confirm" class="error error--second"> </span>
   
       <div class="input-row">
         <label class="input-row__label" for="input_password"> Password: </label>
-        <input id="input_password" class="input-row__input" name="password" type="password" >
+        <input id="input_password" class="input-row__input" name="password" type="password" required>
       </div>
       <span id="password" class="error">  </span>
 
       <div class="input-row">
         <label class="input-row__label" for="input_password_confirm"> Password: </label>
-        <input id="input_password_confirm" class="input-row__input" name="password_confirm" type="password" placeholder="confirm" >
+        <input id="input_password_confirm" class="input-row__input" name="password_confirm" type="password" placeholder="confirm" required>
       </div>
-      <span id="password_confirm" class="error error--last">  </span>
-
-
-      <!-- Span =output here for testing purposes -->
-      <span id="error"></span>
-
+      <span id="password_confirm" class="error error--lastt">  </span>
 
       <button class="submit" type="submit"> Register </button>
-
     </div>
   </form>
 
@@ -69,14 +63,9 @@ const formErrors = (data) => {
 
 const submit = async (event) => {
   event.preventDefault();
-
   const formInfo = new FormData(form);
   const response = await validateForm('/Register/registerUser', formInfo);
-  const formIsValid = response[0];  
-
-  if (!formIsValid){
-    formErrors(response);
-  }
+  formErrors(response);
 }
 
 // Selecting all 'add to cart' buttons and adding event listeners
