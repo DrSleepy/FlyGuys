@@ -13,34 +13,35 @@
 
     <div class="form__bottom">
       <div class="input-row">
-        <label class="input-row__label" for="email"> Email: </label>
-        <input id="email" class="input-row__input" name="email" type="email" >
+        <label class="input-row__label" for="input_email"> Email: </label>
+        <input id="input_email" class="input-row__input" name="email" type="email" >
       </div>
-      <span id="error-email" class="error"> </span>
+      <span id="email" class="error"> </span>
 
       <div class="input-row">
-        <label class="input-row__label" for="email_confirm"> Email: </label>
-        <input id="email_confirm" class="input-row__input" name="email_confirm" type="email" placeholder="confirm" >
+        <label class="input-row__label" for="input_email_confirm"> Email: </label>
+        <input id="input_email_confirm" class="input-row__input" name="email_confirm" type="email" placeholder="confirm" >
       </div>
-      <span id="error-email-confirm" class="error error--second"> </span>
+      <span id="email_confirm" class="error error--second"> </span>
   
       <div class="input-row">
-        <label class="input-row__label" for="password"> Password: </label>
-        <input id="password" class="input-row__input" name="password" type="password" >
+        <label class="input-row__label" for="input_password"> Password: </label>
+        <input id="input_password" class="input-row__input" name="password" type="password" >
       </div>
-      <span id="error-password" class="error">  </span>
+      <span id="password" class="error">  </span>
 
       <div class="input-row">
-        <label class="input-row__label" for="password_confirm"> Password: </label>
-        <input id="password_confirm" class="input-row__input" name="password_confirm" type="password" placeholder="confirm" >
+        <label class="input-row__label" for="input_password_confirm"> Password: </label>
+        <input id="input_password_confirm" class="input-row__input" name="password_confirm" type="password" placeholder="confirm" >
       </div>
-      <span id="error-password-confirm" class="error error--last">  </span>
+      <span id="password_confirm" class="error error--last">  </span>
 
-      <button class="submit" type="submit"> Register </button>
 
       <!-- Span =output here for testing purposes -->
       <span id="error"></span>
 
+
+      <button class="submit" type="submit"> Register </button>
 
     </div>
   </form>
@@ -51,37 +52,35 @@
 
 
 <script type="module">
+import validateForm from '/public/js/modules/validateForm.js';
+import appendErrors from '/public/js/modules/appendErrors.js';
 
-const validateForm = async (formInfo) => {
-  // Ajax call
-  const init = {
-    method: 'POST',
-    body: formInfo
-  }
-  const response = await fetch('/Register/registerUser', init)
-  const textResponse = await response.text();
-  return JSON.parse(textResponse);
+
+const formErrors = (data) => {
+  const errors = data[1];
+  const errorElements = [
+    '#email',
+    '#email_confirm',
+    '#password',   
+    '#password_confirm'            
+  ];
+  appendErrors(errors, errorElements);
 }
-
 
 const submit = async (event) => {
   event.preventDefault();
 
   const formInfo = new FormData(form);
-  const response = await validateForm(formInfo);
-  const formIsValid = response[0];
+  const response = await validateForm('/Register/registerUser', formInfo);
+  const formIsValid = response[0];  
 
-  console.log(response);
-  
-  const errorEl = document.querySelector('#error');
-
-  !formIsValid 
-  ? errorEl.innerHTML = "Incorrect credentials"
-  : errorEl.innerHTML = '';    
-
+  if (!formIsValid){
+    formErrors(response);
+  }
 }
 
 // Selecting all 'add to cart' buttons and adding event listeners
 const form = document.querySelector('#register-form');
 form.addEventListener('submit', submit);
+
 </script>

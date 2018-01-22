@@ -14,9 +14,9 @@ class User
   {
     return $rules = [
       "email" => "required|email",
-      "email_confirm" => "matches:email",
+      "email_confirm" => "required|matches:email",
       "password" => "required|min:8|max:30",
-      "password_confirm" => "matches:password"
+      "password_confirm" => "required|matches:password"
     ];
   }
 

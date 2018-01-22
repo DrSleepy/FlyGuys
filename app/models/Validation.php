@@ -28,7 +28,7 @@ class Validation
         switch ($ruleName) {
           case 'required':
             if (!isset($key) || empty($key) || strlen($key) === 0) {
-              $errors[$keyName][] = "$keyName is required"; // appends new element to $errors array
+              $errors[$keyName][] = "field is required"; // appends new element to $errors array
             }
             break;
 

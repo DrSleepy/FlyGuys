@@ -34,24 +34,13 @@
 
 
 <script type="module">
-
-const validateForm = async (formInfo) => {
-  // Ajax call
-  const init = {
-    method: 'POST',
-    body: formInfo
-  }
-  const response = await fetch('/Login/loginUser', init)
-  const textResponse = await response.text();
-  return JSON.parse(textResponse);
-}
-
+import validateForm from '/public/js/modules/validateForm.js';
 
 const submit = async (event) => {
   event.preventDefault();
 
   const formInfo = new FormData(form);
-  const response = await validateForm(formInfo);
+  const response = await validateForm('/Login/loginUser', formInfo);
   const formIsValid = response[0];
   
   const errorEl = document.querySelector('#error');
