@@ -5,7 +5,7 @@ class Home extends Controller
   function __construct()
   {
 
-    $password = "bbb";
+    $password = "bbbb";
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     $isPassword = password_verify('abc', $hashedPassword);
