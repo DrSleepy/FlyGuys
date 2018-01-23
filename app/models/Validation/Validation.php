@@ -93,13 +93,13 @@ class Validation
         break;
 
       case 'alphabetical':
-        if (!preg_match("/^[a-zA-Z]+$/", $this->ruleValue)) {
+        if (!preg_match("/^[a-zA-Z]+$/", str_replace(' ', '', $this->ruleValue))) {
           $this->errors[$this->ruleName][] = "alphabetical characters only";
         }
         break;
 
       case 'numerical':
-        if (!preg_match("/^[0-9]+$/", $this->ruleValue)) {
+        if (!preg_match("/^[0-9]+$/", str_replace(' ', '', $this->ruleValue))) {
           $this->errors[$this->ruleName][] = "numerical characters only";
         }
         break;
