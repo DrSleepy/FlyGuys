@@ -5,7 +5,7 @@ class Home extends Controller
   function __construct()
   {
 
-    $password = "Editing BEFIRE creating new branch COMMIT1";
+    $password = "Editing BEFIRE creating new branch COMMIT2";
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     $isPassword = password_verify('abc', $hashedPassword);
