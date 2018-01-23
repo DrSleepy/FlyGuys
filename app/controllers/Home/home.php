@@ -6,7 +6,7 @@ class Home extends Controller
   {
 
 
-    $password = "im a test";
+    $password = "im a testt";
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     $isPassword = password_verify('abc', $hashedPassword);
