@@ -6,7 +6,7 @@ class Home extends Controller
   {
 
 
-    $password = "abc";
+    $password = "FROM REAL MVC";
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     $isPassword = password_verify('abc', $hashedPassword);

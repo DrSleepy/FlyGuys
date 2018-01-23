@@ -4,10 +4,10 @@
 <?php foreach ($data as $flight) : ?>
 <article id="formID" class="flight-wrapper">
   <header class="flight-header">
-    <img id="" name="a" class="flight-header__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/airline_logo.svg">
-    <h2 id="" name="b" class="flight-header__airline"> <?php echo $flight['airline'] ?> </h2>
-    <p name="c" class="flight-header__price"> £<?php echo $flight['price'] ?> </p>
-    <button id="add" class="flight-header__button" data-flightid="<?php echo $flight['id'] ?>"> Add to cart </button>
+    <img class="flight-header__logo" src="<?php echo PUBLIC_ROOT; ?>/img/icons/airline_logo.svg">
+    <h2 class="flight-header__airline"> <?php echo $flight['airline'] ?> </h2>
+    <p class="flight-header__price"> £<?php echo $flight['price'] ?> </p>
+    <button id="add" class="flight-header__button" data-flight="<?php print_r($flight) ?>"> Add to cart </button>
   </header>
 
   <div class="flight-bound">
@@ -55,9 +55,9 @@
 // const addFlightToCart = async (event) => {
 //   event.preventDefault();
   
-//   const data = {
-//     flightid: event.target.dataset.flightid
-//   }
+  const data = {
+    flight: event.target.dataset.flight
+  }
 //   const result = await ajax.post('/Carts/addToCart', data);
 
 //   const output = document.querySelector('#output');
