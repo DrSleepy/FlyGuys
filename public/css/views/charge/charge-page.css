@@ -1,0 +1,21 @@
+.thanks-wrapper {
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 1.5rem;
+  border: solid 1px #ccdae5;
+}
+
+.title {
+  color: #3ecf8e;
+  font-family: 'secondary-font-normal';
+}
+
+.confirmation {
+  margin-bottom: 40px;
+}
+
+.back {
+  transition: 0.2s;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+}

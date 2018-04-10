@@ -1,0 +1,403 @@
+.page-heading {
+  padding: 1.5rem;
+  margin-bottom: 0.375rem;
+  font-family: 'secondary-font-medium';
+}
+.section {
+  font-family: 'Roboto';
+  margin-bottom: 1rem;
+  background-color: white;
+  border-top: solid 1px #ccdae5;
+  border-bottom: solid 1px #ccdae5;
+}
+.section__checkbox {
+  display: none;
+}
+.section__checkbox:checked + .heading::before {
+  color: #ccdae5;
+  content: '\f123';
+}
+.section__header {
+  padding: 1.5rem 0.75rem;
+  border-bottom: solid 1px #ccdae5;
+  font-family: 'secondary-font-normal';
+}
+.dropdown-section {
+  display: grid;
+  padding: 1.5rem 0.75rem;
+}
+.dropdown-section--edit {
+  padding: 0 !important;
+}
+.subheading {
+  color: #3ecf8e;
+  margin: 2rem 0 0.5rem 0;
+  font-family: 'secondary-font-normal';
+}
+
+.subheading:first-child {
+  margin-top: 0;
+}
+.subheading--footer {
+  margin-top: 0.5rem !important;
+}
+
+/* EDIT FLIGHT POPUP SECTION */
+.edit-popup-wrapper {
+  animation: slideDown2 0.3s forwards;
+  display: none !important;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.603);
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  overflow-y: scroll;
+  z-index: 1;
+}
+.edit-popup {
+  height: max-content;
+  width: 90vw;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.15), 0 15px 12px rgba(0, 0, 0, 0.1);
+}
+.edit-popup-header {
+  background-color: #32b67a;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 3px 3px 0 0;
+}
+.edit-section {
+  padding: 1.5rem;
+}
+.edit-buttons {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: end;
+  grid-column-gap: 10px;
+  margin-top: 20px;
+  grid-column: 1/3;
+}
+
+.edit-section__button--cancel,
+.edit-section__button--update {
+  padding: 1rem 2rem;
+  border-radius: 3px;
+}
+.edit-section__button--cancel {
+  color: #9da7c5;
+  background-color: #fff;
+}
+.edit-section__button--update {
+  color: #fff;
+  background-color: #3ecf8e;
+}
+.edit-section__button--cancel:hover {
+  color: #3e465e;
+}
+.edit-section__button--update:hover {
+  background-color: #32b67a;
+}
+@keyframes slideDown2 {
+  0% {
+    opacity: 0;
+    margin-top: -5px;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 0px;
+  }
+}
+/* NEW FLIGHT SECTION */
+#new-flight-section {
+  display: none;
+}
+
+.heading::before {
+  font-family: 'Ionicons';
+  content: '\f126';
+  font-size: 20px;
+  margin-right: 10px;
+}
+.new-flight__info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.new-flight__label {
+  margin: 8px 0;
+}
+
+.new-flight__label--date {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+.new-flight__label--dTime {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+.new-flight__label--dlocation {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+.new-flight__label--lTime {
+  grid-column: 1 / 2;
+  grid-row: 5 / 6;
+}
+.new-flight__label--lLocation {
+  grid-column: 2 / 3;
+  grid-row: 5 / 6;
+}
+
+.new-flight__input {
+  font-family: 'Roboto';
+  font-weight: 400;
+  margin-bottom: 8px;
+  width: 100%;
+  height: 100%;
+}
+.new-flight__input--dTime,
+.new-flight__input--lTime {
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+}
+.new-flight__input--dlocation,
+.new-flight__input--lLocation {
+  border-radius: 0 4px 4px 0;
+}
+.new-flight__input--date {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+}
+.new-flight__input--dTime {
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
+}
+.new-flight__input--dlocation {
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
+}
+.new-flight__input--lTime {
+  grid-column: 1 / 2;
+  grid-row: 6 / 7;
+}
+.new-flight__input--lLocation {
+  grid-column: 2 / 3;
+  grid-row: 6 / 7;
+}
+.new-flight__add {
+  justify-self: end;
+}
+.new-flight__add:after {
+  font-family: 'Ionicons';
+  content: '\f217';
+  margin-left: 5px;
+}
+.new-flight-bottom {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.new-flight-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 10px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.new-flight-footer__input {
+}
+
+/* EDIT FLIGHT SECTION */
+#edit-flight-section {
+  display: none;
+}
+
+.table {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.table-header,
+.table-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 1fr 1fr;
+  grid-column-gap: 10px;
+  border-radius: 3px;
+  padding: 0.75rem;
+}
+.table-header {
+  font-weight: 500;
+  background-color: rgb(246, 248, 252);
+  margin-bottom: 10px;
+}
+.table-row {
+  margin-bottom: 5px;
+  align-items: center;
+  padding: 0 0.75rem;
+}
+.table-row:last-child {
+  margin-bottom: 0.75rem;
+}
+.table-row:hover {
+  cursor: default;
+  color: #2bdf8e;
+}
+
+.row__edit {
+  justify-self: end;
+  padding: 0.75rem 1.5rem;
+  height: 100%;
+}
+
+.row__edit:after {
+  font-family: 'Ionicons';
+  content: '\f2bf';
+  margin-left: 5px;
+}
+
+/* EDIT FLIGHT SECTION */
+#promotions-section {
+  display: none;
+}
+
+/* DESTIONATION SECTION */
+#destinations-section {
+  display: none;
+}
+.destination-section {
+  display: grid;
+  grid-column-gap: 50px;
+  grid-row-gap: 30px;
+}
+.destination-item {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-column-gap: 10px;
+}
+
+.destination-item--three {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.subheading--destination {
+  grid-column: 1/4;
+}
+.subheading--destination-delete {
+  color: #d31b1b;
+}
+
+@media only screen and (min-width: 992px) {
+  .edit-popup {
+    max-width: 960px;
+  }
+  .section {
+    border-radius: 3px;
+    border: solid 1px #ccdae5;
+  }
+  .section__header {
+    padding: 1.5rem 2rem;
+    border-bottom: solid 1px #ccdae5;
+  }
+
+  .dropdown-section {
+    padding: 1.5rem 2rem;
+  }
+
+  .new-flight-bottom {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    grid-column-gap: 10px;
+  }
+
+  .new-flight__add {
+    align-self: end;
+    margin-bottom: 15px;
+  }
+
+  /* NEW FLIGHT SECTION */
+  .new-flight__info {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .new-flight__label--date,
+  .new-flight__label--dTime,
+  .new-flight__label--dlocation,
+  .new-flight__label--lTime,
+  .new-flight__label--lLocation {
+    grid-row: 1 / 2;
+  }
+  .new-flight__label--date {
+    grid-column: 1 / 2;
+  }
+  .new-flight__label--dTime {
+    grid-column: 2 / 3;
+  }
+  .new-flight__label--dlocation {
+    grid-column: 3 / 4;
+  }
+  .new-flight__label--lTime {
+    grid-column: 4 / 5;
+  }
+  .new-flight__label--lLocation {
+    grid-column: 5 / 6;
+  }
+  .new-flight__input {
+    border-right: none;
+    border-radius: 0;
+  }
+  .new-flight__input--date,
+  .new-flight__input--dTime,
+  .new-flight__input--dlocation,
+  .new-flight__input--lTime,
+  .new-flight__input--lLocation {
+    grid-row: 2 / 3;
+  }
+  .new-flight__input--date {
+    grid-column: 1 / 2;
+    border-radius: 4px 0 0 4px;
+  }
+  .new-flight__input--dTime {
+    grid-column: 2 / 3;
+  }
+  .new-flight__input--dlocation {
+    grid-column: 3 / 4;
+  }
+  .new-flight__input--lTime {
+    grid-column: 4 / 5;
+  }
+  .new-flight__input--lLocation {
+    grid-column: 5 / 6;
+    border-right: solid 1px #ccdae5;
+    border-radius: 0 4px 4px 0;
+  }
+
+  /* EDIT FLIGHT SECTION */
+  .table-header,
+  .table-row {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .table-header {
+    padding: 0.75rem 2rem;
+  }
+  .table-row {
+    padding: 0 2rem;
+  }
+
+  /* DESTINAITON SECTIONS */
+  .destination-section {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .edit-popup {
+    max-width: 1140px;
+  }
+}
+@media only screen and (min-width: 1800px) {
+  .edit-popup {
+    max-width: 1200px;
+  }
+}

@@ -1,0 +1,101 @@
+@import '../../ionicons/ionicons-2.0.1/css/ionicons.css';
+body {
+  background-color: #f9fbfc;
+  overflow-y: scroll;
+}
+input,
+select {
+  background: #fff;
+}
+.wrapper {
+  margin: 0 auto;
+  height: 100%;
+  padding-bottom: 50px;
+}
+@media only screen and (min-width: 992px) {
+  .wrapper {
+    padding-left: 0.96rem;
+    padding-right: 0.96rem;
+    max-width: 960px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .wrapper {
+    max-width: 1140px;
+  }
+}
+@media only screen and (min-width: 1800px) {
+  .wrapper {
+    max-width: 1200px;
+  }
+}
+.error {
+  font-size: 0.8889rem;
+  line-height: 1.5rem;
+  color: rgba(231, 10, 10, 0.651);
+}
+.error-input {
+  border: solid 1px rgba(231, 10, 10, 0.651);
+}
+input:focus,
+select:focus {
+  color: #495057;
+  background-color: #fff;
+  border: solid 1px #3ecf8e;
+  outline: 0;
+  -webkit-box-shadow: 0 0 4px 0.1px rgba(62, 207, 142, 0.5);
+  box-shadow: 0 0 4px 0.1px rgba(62, 207, 142, 0.5);
+}
+
+@-webkit-keyframes bounce-out {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  90% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  to {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes bounce-out {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  90% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  to {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.border-button {
+  font-weight: 500;
+  border-radius: 3px;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  border: solid 1px #3ecf8e;
+  color: #3ecf8e;
+}
+.border-button:hover {
+  background-color: #3ecf8e;
+  border: solid 1px #3ecf8e;
+  color: #fff;
+}
+
+.red-button {
+  color: #d31b1b;
+  border: solid 1px #d31b1b;
+}
+.red-button:hover {
+  background-color: #d31b1b;
+  border: solid 1px #d31b1b;
+  color: #fff;
+}
